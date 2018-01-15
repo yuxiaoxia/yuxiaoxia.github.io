@@ -116,8 +116,8 @@
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = 'http://or4dxzlex.bkt.clouddn.com/img/' + data.link[i] + '?imageView2/1/w/300';
-          var src = 'http://or4dxzlex.bkt.clouddn.com/img/' + data.link[i];
+          var minSrc = 'http://or4dxzlex.bkt.clouddn.com/img/' + data.link[i] + '?imageView2/1/w/300/h/300';
+          var src = 'http://or4dxzlex.bkt.clouddn.com/img/' + data.link[i]+ '?imageView2/1/w/700/h/700';
           var type = data.type[i];
           // var target = src + (type === 'video' ? '.mp4' : '.jpg');
           var target = src;
