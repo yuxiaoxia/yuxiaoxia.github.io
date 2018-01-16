@@ -131,8 +131,8 @@
 	.instagram .thumb {
 		width: 50%;
 		padding-bottom: 50%;
-		margin-right: 1%;
-	  margin-bottom: 1%;
+		margin-right: 0%;
+	  margin-bottom: 0%;
 	}
 	.instagram .album li {
 		width: 100%;
