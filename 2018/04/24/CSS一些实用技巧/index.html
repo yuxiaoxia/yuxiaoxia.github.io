@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>CSS一些实用技巧 | Leah的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用margin负边距使用float并加上右边距的列表布局，由于多了右边距，父元素宽度不够，最后一列就会掉下来，这时可以给父元素加上负的右边距，撑大父元素容器 demo http://jsbin.com/qehudabufa/edit?html,output">
+  <meta name="description" content="使用after,before伪类元素::before和::after下特有的content，用于在css渲染中向元素逻辑上的头部或尾部添加内容这些添加不会出现在DOM中，不会改变文档内容，不可复制，仅仅是在css渲染层加入">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS一些实用技巧">
 <meta property="og:url" content="http://yoursite.com/2018/04/24/CSS一些实用技巧/index.html">
 <meta property="og:site_name" content="Leah的博客">
-<meta property="og:description" content="使用margin负边距使用float并加上右边距的列表布局，由于多了右边距，父元素宽度不够，最后一列就会掉下来，这时可以给父元素加上负的右边距，撑大父元素容器 demo http://jsbin.com/qehudabufa/edit?html,output">
-<meta property="og:updated_time" content="2018-04-24T04:09:43.000Z">
+<meta property="og:description" content="使用after,before伪类元素::before和::after下特有的content，用于在css渲染中向元素逻辑上的头部或尾部添加内容这些添加不会出现在DOM中，不会改变文档内容，不可复制，仅仅是在css渲染层加入">
+<meta property="og:updated_time" content="2018-05-03T13:57:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS一些实用技巧">
-<meta name="twitter:description" content="使用margin负边距使用float并加上右边距的列表布局，由于多了右边距，父元素宽度不够，最后一列就会掉下来，这时可以给父元素加上负的右边距，撑大父元素容器 demo http://jsbin.com/qehudabufa/edit?html,output">
+<meta name="twitter:description" content="使用after,before伪类元素::before和::after下特有的content，用于在css渲染中向元素逻辑上的头部或尾部添加内容这些添加不会出现在DOM中，不会改变文档内容，不可复制，仅仅是在css渲染层加入">
   
     <link rel="alternative" href="/atom.xml" title="Leah的博客" type="application/atom+xml">
   
@@ -162,18 +162,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用margin负边距"><a href="#使用margin负边距" class="headerlink" title="使用margin负边距"></a>使用margin负边距</h2><p>使用float并加上右边距的列表布局，由于多了右边距，父元素宽度不够，最后一列就会掉下来，这时可以给父元素加上负的右边距，撑大父元素容器</p>
-<p>demo <a href="http://jsbin.com/qehudabufa/edit?html,output" target="_blank" rel="noopener">http://jsbin.com/qehudabufa/edit?html,output</a></p>
+        <h5 id="使用after-before伪类元素"><a href="#使用after-before伪类元素" class="headerlink" title="使用after,before伪类元素"></a>使用after,before伪类元素</h5><p>::before和::after下特有的content，用于在css渲染中向元素逻辑上的头部或尾部添加内容<br>这些添加不会出现在DOM中，不会改变文档内容，不可复制，仅仅是在css渲染层加入</p>
 <a id="more"></a>
-<h2 id="使用after-before伪类元素"><a href="#使用after-before伪类元素" class="headerlink" title="使用after,before伪类元素"></a>使用after,before伪类元素</h2><p>::before和::after下特有的content，用于在css渲染中向元素逻辑上的头部或尾部添加内容<br>这些添加不会出现在DOM中，不会改变文档内容，不可复制，仅仅是在css渲染层加入</p>
 <p>所以不要用:before或:after展示有实际意义的内容，尽量使用它们显示修饰性内容</p>
 <p>::before和::after必须配合content属性来使用，content用来定义插入的内容，content必须有值，至少是空</p>
 <p>after,before伪类元素可以用来清除浮动，画出一些形状，如三角形，制作一些特效<br>content属性可以是一个字符串，可以通过attr()调用当前元素的属性，可以用于引用媒体文件。</p>
-<p>demo <a href="http://jsbin.com/nojusonera/edit?html,output" target="_blank" rel="noopener">http://jsbin.com/nojusonera/edit?html,output</a></p>
+<p><a href="http://jsbin.com/nojusonera/edit?html,output" target="_blank" rel="noopener">demo</a></p>
 <p>一些大佬做的效果参考</p>
 <p>伪元素创建各种小图标 <a href="http://nicolasgallagher.com/pure-css-gui-icons/demo/" target="_blank" rel="noopener">http://nicolasgallagher.com/pure-css-gui-icons/demo/</a><br>特效 <a href="https://tympanus.net/Development/CreativeLinkEffects/" target="_blank" rel="noopener">https://tympanus.net/Development/CreativeLinkEffects/</a></p>
-<h2 id="absolute"><a href="#absolute" class="headerlink" title="absolute"></a>absolute</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  background: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="使用margin负边距"><a href="#使用margin负边距" class="headerlink" title="使用margin负边距"></a>使用margin负边距</h5><p>使用float并加上右边距的列表布局，由于多了右边距，父元素宽度不够，最后一列就会掉下来，这时可以给父元素加上负的右边距，撑大父元素容器</p>
+<p><a href="http://jsbin.com/qehudabufa/edit?html,output" target="_blank" rel="noopener">demo</a></p>
+<h5 id="absolute"><a href="#absolute" class="headerlink" title="absolute"></a>absolute</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">div&#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  top: 0;</span><br><span class="line">  right: 0;</span><br><span class="line">  bottom: 0;</span><br><span class="line">  left: 0;</span><br><span class="line">  background: red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果不给元素定义宽度，高度，这么写div将铺满全屏</p>
+<h5 id="visibility-visible"><a href="#visibility-visible" class="headerlink" title="visibility: visible"></a>visibility: visible</h5><p>依你估计，把一个设置为visibility: visible的元素放在一个设置为visibility: hidden的元素里面，会发生什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.hidden &#123;</span><br><span class="line">  visibility: hidden;</span><br><span class="line">&#125;</span><br><span class="line">.hidden .visible &#123;</span><br><span class="line">  visibility: visible;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然而事实上整个父元素都被隐藏了，而子元素不会</p>
+<h6 id="margin-padding百分比"><a href="#margin-padding百分比" class="headerlink" title="margin,padding百分比"></a>margin,padding百分比</h6><p>元素的margin-top、margin-bottom及padding-top、padding-bottom使用百分比作为单位时，其是相对父元素的宽度width</p>
+<p>我们可以巧用margin/padding的百分比值实现高度自适应（多用于占位，避免闪烁）</p>
+<p>例如，商品图片展示时占位，商品图片高度自适应</p>
+<p><a href="http://jsbin.com/madohitija/edit?html,output" target="_blank" rel="noopener">demo</a></p>
+<h5 id="font-size-0的作用"><a href="#font-size-0的作用" class="headerlink" title="font-size:0的作用"></a>font-size:0的作用</h5><p>display：inline-block的元素之间会有一个字符的间隙，这个间隙导致了最后一个会掉下来，给元素设置font-size：0px可以解决</p>
 
       
 
