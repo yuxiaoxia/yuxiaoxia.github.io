@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2018/04/24/CSS一些实用技巧/index.html">
 <meta property="og:site_name" content="Leah的博客">
 <meta property="og:description" content="使用after,before伪类元素::before和::after下特有的content，用于在css渲染中向元素逻辑上的头部或尾部添加内容这些添加不会出现在DOM中，不会改变文档内容，不可复制，仅仅是在css渲染层加入">
-<meta property="og:updated_time" content="2018-05-03T13:57:56.000Z">
+<meta property="og:updated_time" content="2018-05-08T03:49:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS一些实用技巧">
 <meta name="twitter:description" content="使用after,before伪类元素::before和::after下特有的content，用于在css渲染中向元素逻辑上的头部或尾部添加内容这些添加不会出现在DOM中，不会改变文档内容，不可复制，仅仅是在css渲染层加入">
@@ -181,7 +181,8 @@
 <p>我们可以巧用margin/padding的百分比值实现高度自适应（多用于占位，避免闪烁）</p>
 <p>例如，商品图片展示时占位，商品图片高度自适应</p>
 <p><a href="http://jsbin.com/madohitija/edit?html,output" target="_blank" rel="noopener">demo</a></p>
-<h5 id="font-size-0的作用"><a href="#font-size-0的作用" class="headerlink" title="font-size:0的作用"></a>font-size:0的作用</h5><p>display：inline-block的元素之间会有一个字符的间隙，这个间隙导致了最后一个会掉下来，给元素设置font-size：0px可以解决</p>
+<h5 id="font-size-0的作用"><a href="#font-size-0的作用" class="headerlink" title="font-size:0的作用"></a>font-size:0的作用</h5><p>有时候我们给子元素设置了display：inline-block，宽度也算的刚刚好，但是布局的时候会折行，这是因为display：inline-block的元素之间会有一些空白区域，这个空白区域的间隙导致了布局时会掉下来，给元素设置font-size：0px可以让空白消失，从而不会不折行</p>
+<h5 id="inline-block对齐"><a href="#inline-block对齐" class="headerlink" title="inline-block对齐"></a>inline-block对齐</h5><p>并列的 inline-block 默认是基线对齐的，可以通过设置 vertical-align:top 属性使其顶部对齐。</p>
 
       
 
@@ -334,11 +335,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
