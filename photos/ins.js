@@ -117,7 +117,7 @@
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
           var minSrc = 'http://p2mtk6ie2.bkt.clouddn.com/img/' + data.link[i] + '?imageView2/1/h/300';
-          var src = 'http://p2mtk6ie2.bkt.clouddn.com/img/' + data.link[i] + '?imageView2/1/h/900';
+          var src = 'http://p2mtk6ie2.bkt.clouddn.com/img/' + data.link[i];
           var type = data.type[i];
           // var target = src + (type === 'video' ? '.mp4' : '.jpg');
           var target = src;
