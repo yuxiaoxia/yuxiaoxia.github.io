@@ -550,7 +550,7 @@
             $video.setAttribute('autoplay', 'autoplay');
             $video.setAttribute('controls', 'controls');
             $video.setAttribute('src', item.target);
-            $video.style.width = style.width;
+            // $video.style.width = style.width;
             $video.style.height = style.height;
             $video.style.position = 'absolute';
             $video.style.zIndex = 2;
