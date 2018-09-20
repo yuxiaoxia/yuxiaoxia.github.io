@@ -124,7 +124,7 @@
           // src += '.jpg';
 
           liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
-                <a href="' + src + '" itemprop="contentUrl" data-size="640x440" data-type="' + type + '" data-target="' + target + '">\
+                <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
                   <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
                 </a>\
                 <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
@@ -368,10 +368,10 @@
           // create slide object
           item = {
             src: linkEl.getAttribute('href'),
-            w: parseInt(size[0], 10),
+            w: 'auto',
             h: parseInt(size[1], 10)
           };
-
+          console.log(item)
           if (figureEl.children.length > 1) {
             item.title = figureEl.children[1].innerHTML;
           }
