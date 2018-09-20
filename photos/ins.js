@@ -368,7 +368,7 @@
           // create slide object
           item = {
             src: linkEl.getAttribute('href'),
-            w: 'auto',
+            w: parseInt(size[0], 10),
             h: parseInt(size[1], 10)
           };
           console.log(item)
