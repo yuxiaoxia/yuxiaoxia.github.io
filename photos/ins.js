@@ -88,7 +88,7 @@
     var _collection = [];
     var _count = 0;
     var searchData;
-
+    var dataSizeArr = [];
     function addMask(elem) {
       var rect = elem.getBoundingClientRect();
       var style = getComputedStyle(elem, null);
@@ -110,29 +110,55 @@
         addMask($videoImg[i]);
       }
     };
+    var loadSize = function loadSize(src, success) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', src , false);
+
+      xhr.onload = function() {
+        if (this.status >= 200 && this.status < 300) {
+          var res = JSON.parse(this.response);
+          success(res);
+        } else {
+          console.error(this.statusText);
+        }
+      };
+
+      xhr.onerror = function() {
+        console.error(this.statusText);
+      };
+
+      xhr.send();
+    }
     var render = function render(res) {
       var ulTmpl = "";
       for (var j = 0, len2 = res.list.length; j < len2; j++) {
-        var data = res.list[j].arr;
-        var liTmpl = "";
-        for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = 'http://p2mtk6ie2.bkt.clouddn.com/img/' + data.link[i] + '?imageView2/1/h/300';
-          var src = 'http://p2mtk6ie2.bkt.clouddn.com/img/' + data.link[i];
-          var type = data.type[i];
-          // var target = src + (type === 'video' ? '.mp4' : '.jpg');
-          var target = src;
-          // src += '.jpg';
-
-          liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
-                <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
-                  <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
-                </a>\
-                <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
-            </figure>';
-        }
-        ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '<em>' + data.month + '月</em><em>' + data.title + '</em>' + '</h1>\
-        <ul class="img-box-ul">' + liTmpl + '</ul>\
-        </section>';
+        (function (j) {
+          var data = res.list[j].arr;
+          var liTmpl = "";
+          for (var i = 0, len = data.link.length; i < len; i++) {
+            (function (i) {
+              var minSrc = 'http://p2mtk6ie2.bkt.clouddn.com/img/' + data.link[i] + '?imageView2/1/h/300';
+              var src = 'http://p2mtk6ie2.bkt.clouddn.com/img/' + data.link[i];
+              var type = data.type[i];
+              // var target = src + (type === 'video' ? '.mp4' : '.jpg');
+              var target = src;
+              var text = data.text[i]
+              var dataSize = '640x640'
+              loadSize(src + '?imageInfo', function(data) {
+                dataSize = data.width + 'x' + data.height
+                liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
+                    <a href="' + src + '" itemprop="contentUrl" data-size="'+dataSize+'" data-type="' + type + '" data-target="' + target + '">\
+                      <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
+                    </a>\
+                    <figcaption style="display:none" itemprop="caption description">' + text + '</figcaption>\
+                </figure>';
+              })
+            })(i)
+          }
+          ulTmpl = ulTmpl + '<section class="archives album"><h1 class="year">' + data.year + '<em>' + data.month + '月</em><em>' + data.title + '</em>' + '</h1>\
+          <ul class="img-box-ul">' + liTmpl + '</ul>\
+          </section>';
+        })(j)
       }
       document.querySelector('.instagram').innerHTML = '<div class="photos" itemscope="" itemtype="http://schema.org/ImageGallery">' + ulTmpl + '</div>';
       createVideoIncon();
@@ -333,7 +359,7 @@
   function(module, exports) {
 
     'use strict';
-
+  
     var initPhotoSwipeFromDOM = function initPhotoSwipeFromDOM(gallerySelector) {
 
       // parse slide data (url, title, size ...) from DOM elements 
@@ -365,13 +391,14 @@
           size = linkEl.getAttribute('data-size').split('x');
           type = linkEl.getAttribute('data-type');
           target = linkEl.getAttribute('data-target');
+          var src = linkEl.getAttribute('href')
           // create slide object
           item = {
-            src: linkEl.getAttribute('href'),
+            src: src,
             w: parseInt(size[0], 10),
             h: parseInt(size[1], 10)
           };
-          console.log(item)
+
           if (figureEl.children.length > 1) {
             item.title = figureEl.children[1].innerHTML;
           }
