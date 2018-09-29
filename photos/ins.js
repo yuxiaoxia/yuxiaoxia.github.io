@@ -110,7 +110,7 @@
         addMask($videoImg[i]);
       }
     };
-    var loadSize = function loadSize(src, success) {
+    var loadSize = function loadSize(src, success, error) {
       var xhr = new XMLHttpRequest();
       xhr.open('GET', src , false);
 
@@ -125,6 +125,7 @@
 
       xhr.onerror = function() {
         console.error(this.statusText);
+        error()
       };
 
       xhr.send();
@@ -146,6 +147,13 @@
               var dataSize = '640x640'
               loadSize(src + '?imageInfo', function(data) {
                 dataSize = data.width + 'x' + data.height
+                liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
+                    <a href="' + src + '" itemprop="contentUrl" data-size="'+dataSize+'" data-type="' + type + '" data-target="' + target + '">\
+                      <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
+                    </a>\
+                    <figcaption style="display:none" itemprop="caption description">' + text + '</figcaption>\
+                </figure>';
+              }, function() {
                 liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                     <a href="' + src + '" itemprop="contentUrl" data-size="'+dataSize+'" data-type="' + type + '" data-target="' + target + '">\
                       <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
