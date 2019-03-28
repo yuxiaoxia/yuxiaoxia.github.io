@@ -138,15 +138,15 @@
           var liTmpl = "";
           for (var i = 0, len = data.link.length; i < len; i++) {
             (function (i) {
-              var minSrc = 'http://p2mtk6ie2.bkt.clouddn.com/img/' + data.link[i] + '?imageView2/1/h/300';
-              var src = 'http://p2mtk6ie2.bkt.clouddn.com/img/' + data.link[i];
+              var minSrc = 'https://wxiaoxia.oss-cn-shenzhen.aliyuncs.com/blog/' + data.link[i] + '?x-oss-process=style/rule';
+              var src = 'https://wxiaoxia.oss-cn-shenzhen.aliyuncs.com/blog/' + data.link[i];
               var type = data.type[i];
               // var target = src + (type === 'video' ? '.mp4' : '.jpg');
               var target = src;
               var text = data.text[i]
-              var dataSize = '640x640'
-              loadSize(src + '?imageInfo', function(data) {
-                dataSize = data.width + 'x' + data.height
+              var dataSize = '1000x640'
+              loadSize(src + '?x-oss-process=image/info', function(data) {
+                dataSize = data.ImageWidth.value + 'x' + data.ImageHeight.value
               })
               liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                     <a href="' + src + '" itemprop="contentUrl" data-size="'+dataSize+'" data-type="' + type + '" data-target="' + target + '">\
@@ -519,7 +519,6 @@
               // find thumbnail
               pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
               rect = thumbnail.getBoundingClientRect();
-
             return {
               x: rect.left,
               y: rect.top + pageYScroll,

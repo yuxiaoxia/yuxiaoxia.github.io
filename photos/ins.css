@@ -32,8 +32,9 @@
 	display: inline-block;
 	text-align: center;
 	background: #ededed;
-	margin-right: 1%;
-	margin-bottom: 1%;
+	/*margin-right: 1%;*/
+	/*margin-bottom: 1%;*/
+	overflow: hidden;
 }
 .instagram .thumb a {
 	position: relative;
