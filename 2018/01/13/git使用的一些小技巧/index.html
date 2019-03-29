@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 微信小程序 | xiaoxia的博客</title>
+  <title>git使用的一些小技巧 | xiaoxia的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生活是自己的">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xiaoxia的博客">
-<meta property="og:url" content="http://yoursite.com/tags/微信小程序/index.html">
+  <meta name="description" content="下面列举一些git使用的小技巧，陆续会补充 git-提取/合并某分支的部分文件git中可以使用merge合并分支内容，特殊情况下，我们可能需要将一个分支的部分文件合并到主分支，例如，某个分支的部分功能需要上线，而另一部分功能开发到一半，这时候，我们只需要提交需要上线的代码。当然你可以手动 copy 代码，但git能做到的我们就不要copy代码啦。git中可以使用checkout从某个分支中检出相应">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git使用的一些小技巧">
+<meta property="og:url" content="http://yoursite.com/2018/01/13/git使用的一些小技巧/index.html">
 <meta property="og:site_name" content="xiaoxia的博客">
-<meta property="og:description" content="生活是自己的">
+<meta property="og:description" content="下面列举一些git使用的小技巧，陆续会补充 git-提取/合并某分支的部分文件git中可以使用merge合并分支内容，特殊情况下，我们可能需要将一个分支的部分文件合并到主分支，例如，某个分支的部分功能需要上线，而另一部分功能开发到一半，这时候，我们只需要提交需要上线的代码。当然你可以手动 copy 代码，但git能做到的我们就不要copy代码啦。git中可以使用checkout从某个分支中检出相应">
+<meta property="og:updated_time" content="2019-03-29T12:50:36.170Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xiaoxia的博客">
-<meta name="twitter:description" content="生活是自己的">
+<meta name="twitter:title" content="git使用的一些小技巧">
+<meta name="twitter:description" content="下面列举一些git使用的小技巧，陆续会补充 git-提取/合并某分支的部分文件git中可以使用merge合并分支内容，特殊情况下，我们可能需要将一个分支的部分文件合并到主分支，例如，某个分支的部分功能需要上线，而另一部分功能开发到一半，这时候，我们只需要提交需要上线的代码。当然你可以手动 copy 代码，但git能做到的我们就不要copy代码啦。git中可以使用checkout从某个分支中检出相应">
   
     <link rel="alternative" href="/atom.xml" title="xiaoxia的博客" type="application/atom+xml">
   
@@ -144,60 +146,127 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-git使用的一些小技巧" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/20/微信小程序/" class="archive-article-date">
-  	<time datetime="2018-03-20T11:15:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-20</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/20/微信小程序/">微信小程序</a>
+    <h1 class="article-title" itemprop="name">
+      git使用的一些小技巧
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/13/git使用的一些小技巧/" class="archive-article-date">
+  	<time datetime="2018-01-13T13:43:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>下面列举一些git使用的小技巧，陆续会补充</p>
+<h3 id="git-提取-合并某分支的部分文件"><a href="#git-提取-合并某分支的部分文件" class="headerlink" title="git-提取/合并某分支的部分文件"></a>git-提取/合并某分支的部分文件</h3><p>git中可以使用merge合并分支内容，特殊情况下，我们可能需要将一个分支的部分文件合并到主分支，例如，某个分支的部分功能需要上线，而另一部分功能开发到一半，这时候，我们只需要提交需要上线的代码。当然你可以手动 copy 代码，但git能做到的我们就不要copy代码啦。git中可以使用checkout从某个分支中检出相应文件<br>使用方法<code>git checkout [branch] -- [file name]</code></p>
+<a id="more"></a>
+<h3 id="git忽略文件"><a href="#git忽略文件" class="headerlink" title="git忽略文件"></a>git忽略文件</h3><p>git可以忽略那些特定的文件和文件夹，这些文件就不会被添加到git仓库了。只需要创建一个名为 .gitignore 然后列出那些你不希望 Git 跟踪的文件和文件夹。你还可以添加例外，通过使用感叹号(!)。<br>.svn<br>node_modules<br>bower_components<br>.idea<br>.npm-debug.log<br>!main.pyc</p>
+<h3 id="清除本地分支"><a href="#清除本地分支" class="headerlink" title="清除本地分支"></a>清除本地分支</h3><p>本地其实有很多早就被删除的远程分支，可以用<br><code>git remote prune origin</code><br>全部清除掉，这样再 checkout 别的分支时就清晰多了</p>
+<h3 id="基于远程分支创建分支"><a href="#基于远程分支创建分支" class="headerlink" title="基于远程分支创建分支"></a>基于远程分支创建分支</h3><p><code>git checkout -b feature origin/feature</code></p>
+<h3 id="更新本地代码"><a href="#更新本地代码" class="headerlink" title="更新本地代码"></a>更新本地代码</h3><p>不知道是什么原因，本地代码更改之后git pull拉取远端代码获取不到最新的，但是显示Already up-to-date</p>
+<p>这个时候可以尝试 git status，来显示工作目录和暂存区的状态，再拉取代码<br><code>git status
+ git pull
+ git checkout 分支名</code></p>
+<p>也可以把HEAD指向最新下载的版本</p>
+<p><code>git reset --hard origin/分支名如master</code></p>
+<p>强制覆盖本地代码</p>
+<p><code>git fetch --all &amp;&amp; git reset --hard origin/master &amp;&amp; git pull</code></p>
+<h3 id="大小写问题"><a href="#大小写问题" class="headerlink" title="大小写问题"></a>大小写问题</h3><p>在当前项目中，早先创建并已经push到远程的文件及文件夹，将名称大小写更改后，git无法检测出更改。<br><code>git config core.ignorecase false</code>，关闭git忽略大小写配置，即可检测到大小写名称更改<br>这样可能会产成两个文件，一个大写文件一个小写文件</p>
+<h3 id="找出罪魁祸首"><a href="#找出罪魁祸首" class="headerlink" title="找出罪魁祸首"></a>找出罪魁祸首</h3><p>当代码挂了的时候，使用git blame命令可以找出罪魁祸首。这个命令可以将文件中的每一行的作者、最新的变更提交和提交时间展示出来。<br><code>git blame [file_name]</code></p>
+<h3 id="查看提交内容"><a href="#查看提交内容" class="headerlink" title="查看提交内容"></a>查看提交内容</h3><ul>
+<li>仅仅想看最近谁有提交，以及提交的描述<br><code>git log</code></li>
+<li>仅仅想看最后一次的提交<br><code>git log -n 1</code></li>
+<li>想看到最近一次提交所有更改过的文件<br><code>git log -n 1 --stat</code></li>
+<li>想看到最近一次提交所有更改的细节<br><code>git log -n 1 -p</code></li>
+</ul>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>Git- <a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a><br>TortoiseGit - <a href="https://tortoisegit.org/" target="_blank" rel="noopener">TortoiseGit</a><br>SourceTree - <a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener">SourceTree</a><br>编辑器的Git管理插件也很好用</p>
+<h3 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><p><a href="https://api.boqiicdn.com/o_1b708b67fqto1dvg39g1v9q1t7p15.jpg?imageView2/2/w/750/h/532/interlace/1/q/75" target="_blank" rel="noopener">gitbook</a><br><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">常用 Git 命令清单</a><br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/01/13/一首孙燕姿/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          一首孙燕姿
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/01/13/Mac系统一些工具推荐/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac系统一些工具推荐</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -220,9 +289,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
