@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue使用的一些总结2 | xiaoxia的博客</title>
+  <title>移动端H5开发遇到的坑 | xiaoxia的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="使用vue-clivue-cli 是官方推出的一款 Vue 脚手架工具，它配置了 webpack 配置和 npm 脚本，可以很方便的搭建简单或者完整的 Vue 开发环境  state初始化">
-<meta name="keywords" content="vue">
+  <meta name="description" content="微信分享签名错误invalid signaturevue单页应用history模式下微信分享一直提示签名错误invalid signature 按照微信官网文档，已经引入jssdk，正确的配置js安全域名，后台开发人员生成的签名也通过微信签名工具验证，但是前端的自定义分享一直报签名错误，没有办法自定义分享，如果确保了哪些基本配置没有问题，并且签名也通过了微信签名工具验证，那么可能就是前端访问的ur">
+<meta name="keywords" content="前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue使用的一些总结2">
-<meta property="og:url" content="http://yoursite.com/2018/04/18/vue使用的一些总结2/index.html">
+<meta property="og:title" content="移动端H5开发遇到的坑">
+<meta property="og:url" content="http://yoursite.com/2019/01/01/移动端H5开发遇到的坑/index.html">
 <meta property="og:site_name" content="xiaoxia的博客">
-<meta property="og:description" content="使用vue-clivue-cli 是官方推出的一款 Vue 脚手架工具，它配置了 webpack 配置和 npm 脚本，可以很方便的搭建简单或者完整的 Vue 开发环境  state初始化">
-<meta property="og:updated_time" content="2018-04-24T03:43:33.000Z">
+<meta property="og:description" content="微信分享签名错误invalid signaturevue单页应用history模式下微信分享一直提示签名错误invalid signature 按照微信官网文档，已经引入jssdk，正确的配置js安全域名，后台开发人员生成的签名也通过微信签名工具验证，但是前端的自定义分享一直报签名错误，没有办法自定义分享，如果确保了哪些基本配置没有问题，并且签名也通过了微信签名工具验证，那么可能就是前端访问的ur">
+<meta property="og:updated_time" content="2019-03-30T06:04:04.434Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue使用的一些总结2">
-<meta name="twitter:description" content="使用vue-clivue-cli 是官方推出的一款 Vue 脚手架工具，它配置了 webpack 配置和 npm 脚本，可以很方便的搭建简单或者完整的 Vue 开发环境  state初始化">
+<meta name="twitter:title" content="移动端H5开发遇到的坑">
+<meta name="twitter:description" content="微信分享签名错误invalid signaturevue单页应用history模式下微信分享一直提示签名错误invalid signature 按照微信官网文档，已经引入jssdk，正确的配置js安全域名，后台开发人员生成的签名也通过微信签名工具验证，但是前端的自定义分享一直报签名错误，没有办法自定义分享，如果确保了哪些基本配置没有问题，并且签名也通过了微信签名工具验证，那么可能就是前端访问的ur">
   
     <link rel="alternative" href="/atom.xml" title="xiaoxia的博客" type="application/atom+xml">
   
@@ -146,34 +146,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue使用的一些总结2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-移动端H5开发遇到的坑" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue使用的一些总结2
+      移动端H5开发遇到的坑
     </h1>
   
 
         
-        <a href="/2018/04/18/vue使用的一些总结2/" class="archive-article-date">
-  	<time datetime="2018-04-18T07:35:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
+        <a href="/2019/01/01/移动端H5开发遇到的坑/" class="archive-article-date">
+  	<time datetime="2019-01-01T07:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="使用vue-cli"><a href="#使用vue-cli" class="headerlink" title="使用vue-cli"></a>使用vue-cli</h2><p>vue-cli 是官方推出的一款 Vue 脚手架工具，它配置了 webpack 配置和 npm 脚本，可以很方便的搭建简单或者完整的 Vue 开发环境 </p>
-<h2 id="state初始化"><a href="#state初始化" class="headerlink" title="state初始化"></a>state初始化</h2><a id="more"></a>
-<p>在组件内通过mapState映射获取state数据，最好在state初始化的时候给一个默认值，没有默认值，映射到的值可能为undefined<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const initailState = &#123;</span><br><span class="line">  nickname: &apos;&apos;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">...mapState(&#123;</span><br><span class="line">  nickname: state =&gt; state.nickname,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h2 id="使用vue-route的beforeEach"><a href="#使用vue-route的beforeEach" class="headerlink" title="使用vue-route的beforeEach"></a>使用vue-route的beforeEach</h2><p>在路由跳转前我们可能需要做一些验证，例如登录验证<br>需要为不同的路由设置不同的页面标题</p>
-<p>这时候我们可以使用路由全局守卫 beforeEach，在一个导航触发时进行一些操作</p>
-<p>使用文档 <a href="https://router.vuejs.org/zh-cn/advanced/navigation-guards.html" target="_blank" rel="noopener">https://router.vuejs.org/zh-cn/advanced/navigation-guards.html</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const isLogin = store.state.isLogin</span><br><span class="line">router.beforeEach((to, from, next) =&gt; &#123;</span><br><span class="line">  if (to.meta.title) setTitle(to.meta.title)</span><br><span class="line">  if (!isLogin) &#123;  </span><br><span class="line">    router.push(&#123;name: &apos;login&apos;&#125;)  </span><br><span class="line">  &#125;  </span><br><span class="line">  next()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="表单校验插件vee-validate"><a href="#表单校验插件vee-validate" class="headerlink" title="表单校验插件vee-validate"></a>表单校验插件vee-validate</h2><h2 id="文件上传插件plupload"><a href="#文件上传插件plupload" class="headerlink" title="文件上传插件plupload"></a>文件上传插件plupload</h2>
+        <h3 id="微信分享签名错误invalid-signature"><a href="#微信分享签名错误invalid-signature" class="headerlink" title="微信分享签名错误invalid signature"></a>微信分享签名错误invalid signature</h3><p>vue单页应用history模式下微信分享一直提示签名错误invalid signature</p>
+<p>按照微信官网文档，已经引入jssdk，正确的配置js安全域名，后台开发人员生成的签名也通过微信签名工具验证，但是前端的自定义分享一直报签名错误，没有办法自定义分享，如果确保了哪些基本配置没有问题，并且签名也通过了微信签名工具验证，那么可能就是前端访问的url和后台生成签名的url不一致导致的签名错误</p>
+<a id="more"></a>
+<p>前端如果是通过ajax将url传到后端获取签名，那么我们需要将当前页面除去’#’hash部分的链接，并且需要encodeURIComponent<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let url = location.href.split(&apos;#&apos;)[0]</span><br><span class="line">encodeURIComponent(url)</span><br></pre></td></tr></table></figure></p>
+<p>正常来说这样就可以实现微信自定义分享了，但是单页应用路由切换了之后IOS端还是提示签名错误，安卓端没有问题</p>
+<p>这是因为history模式下视图是通过pushState来切换的，但是IOS微信客户端（安卓客户端已经修复了）不支持pushState的H5新特性，所以路由变化了但是微信浏览器获取到的url没有变化，右上角复制链接发现，微信记录的url还是第一次进入时的url，除非你手动刷新，或者使用window.location等页面跳转方法刷新，才能获取到最新的url</p>
+<p>解决的办法是页面进入的时候记录url，如果是iOS设备那么使用这个url获取微信签名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">router.afterEach(to =&gt; &#123;</span><br><span class="line">  sessionStorage.setItem(&apos;currentUrl&apos;,window.location.href)</span><br><span class="line">&#125;)</span><br><span class="line">let url = encodeURIComponent(location.href.split(&apos;#&apos;)[0])</span><br><span class="line">if(system == &quot;iOS&quot; &amp;&amp; sessionStorage.getItem(&apos;currentUrl&apos;)) &#123;</span><br><span class="line">  url = encodeURIComponent(sessionStorage.getItem(&apos;currentUrl&apos;).split(&apos;#&apos;)[0])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个时候拿这个url去获取微信签名就是正确的了，该方法只适合IOS设备，只要获取签名的url和微信记录的url一致签名就是正确的</p>
+<h3 id="往返缓存问题"><a href="#往返缓存问题" class="headerlink" title="往返缓存问题"></a>往返缓存问题</h3><p>点击浏览器的前进和回退，有时候不会自动执行js，特别是在safari中，这与往返缓存(bfcache)有关系。<br>解决方法 ：window.onunload = function(){};</p>
+<p>如果是Vue单页应用，并且使用了keep-alive的话，页面也不会刷新，这时候一些接口请求等可以放在beforeRouteEnter方法中</p>
+<h3 id="IOS端不支持new-Date-“2019-01-01-00-00-00”-这种格式"><a href="#IOS端不支持new-Date-“2019-01-01-00-00-00”-这种格式" class="headerlink" title="IOS端不支持new Date(“2019-01-01 00:00:00”) 这种格式"></a>IOS端不支持new Date(“2019-01-01 00:00:00”) 这种格式</h3><p>这种写法new Date(“2019-01-01 00:00:00”)在安卓端是支持的，但是在IOS端不支持，会报NAN错误，所以需要把new Date(“2019-01-01 00:00:00”)改成new Date(“2019/01/01 00:00:00”)这种形式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let date = &apos;2019-01-01 00:00:00&apos;</span><br><span class="line">date.replace(/\-/g, &apos;/&apos;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="微信二维码"><a href="#微信二维码" class="headerlink" title="微信二维码"></a>微信二维码</h3><p>一个页面可能有多个二维码，但是长按识别二维码只能识别最后一个二维码，这个时候我们需要控制页面可视区域内只能出现一个二维码</p>
+<h3 id="IOS中无法点击"><a href="#IOS中无法点击" class="headerlink" title="IOS中无法点击"></a>IOS中无法点击</h3><p>span,div 等默认无法点击的标签 在IOS中监听click事件点击无效<br>解决办法，添加 cursor: pointer;</p>
+<h3 id="audio音频无法播放"><a href="#audio音频无法播放" class="headerlink" title="audio音频无法播放"></a>audio音频无法播放</h3><p>audio.play() 方法在安卓设备可以正常播放，但是在IOS客户端不能播放，在设置了audio的src之后，我们需要加上这一行代码<br><code>audio.load()</code> 去加载音频</p>
+<p>可以通过监听loadeddata方法看音频是否可以开始播放了，安卓设置在音频加载好了之后就开始播放，但是iOS端可能稍微有延迟，这个时候我们可以通过<code>audio.currentTime</code>获取到音频是否开始播放,这个值大于0就说明已经开始播放了</p>
+<h3 id="IOS移动端click事件300ms的延迟响应"><a href="#IOS移动端click事件300ms的延迟响应" class="headerlink" title="IOS移动端click事件300ms的延迟响应"></a>IOS移动端click事件300ms的延迟响应</h3><h3 id="fixed问题"><a href="#fixed问题" class="headerlink" title="fixed问题"></a>fixed问题</h3><p>在ios8以下系统，当小键盘激活时，都会出现位置浮动问题<br>解决方法：只需要在中间部分外层div添加css样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">position:fixed;</span><br><span class="line">top:50px;</span><br><span class="line">bottom:50px;</span><br><span class="line">overflow:scroll;</span><br></pre></td></tr></table></figure></p>
+
       
 
       
@@ -186,7 +195,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
         		</li>
       		
 		</ul>
@@ -205,18 +214,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/04/24/CSS一些实用技巧/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CSS一些实用技巧
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/03/20/微信小程序/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">微信小程序</div>
+    <a href="/2019/01/01/前端JS基础篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端JS基础篇</div>
       <i class="icon-circle-right"></i>
     </a>
   
