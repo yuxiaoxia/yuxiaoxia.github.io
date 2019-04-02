@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue使用的一些总结1 | xiaoxia的博客</title>
+  <title>DOM原生操作 | xiaoxia的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一些vue的个人总结 Vue 实例Vue 应用通过 new Vue 创建的根 Vue 实例，以及可选的嵌套的、可复用的组件树组成。 computed、method、watcher模板内的表达式比较复杂时，我们应当使用计算属性  computed 属性会基于它所依赖的数据进行缓存。每个 computed 属性，只有在它所依赖的数据发生变化时，才会重新取值(re-evaluate) 每当触发重新渲染(">
-<meta name="keywords" content="vue">
+  <meta name="description" content="自己整理了js常用原生的DOM操作 查找元素 选择器查询 12document.querySelectorAll(&amp;apos;div&amp;apos;)document.getElementsByTagName(&amp;apos;div&amp;apos;)  class 查询 12document.querySelectorAll(&amp;apos;.class&amp;apos;);document.getElementsBy">
+<meta name="keywords" content="前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue使用的一些总结1">
-<meta property="og:url" content="http://yoursite.com/2018/01/13/vue使用的一些总结1/index.html">
+<meta property="og:title" content="DOM原生操作">
+<meta property="og:url" content="http://yoursite.com/2019/01/18/DOM原生操作/index.html">
 <meta property="og:site_name" content="xiaoxia的博客">
-<meta property="og:description" content="一些vue的个人总结 Vue 实例Vue 应用通过 new Vue 创建的根 Vue 实例，以及可选的嵌套的、可复用的组件树组成。 computed、method、watcher模板内的表达式比较复杂时，我们应当使用计算属性  computed 属性会基于它所依赖的数据进行缓存。每个 computed 属性，只有在它所依赖的数据发生变化时，才会重新取值(re-evaluate) 每当触发重新渲染(">
-<meta property="og:updated_time" content="2018-04-18T07:36:08.000Z">
+<meta property="og:description" content="自己整理了js常用原生的DOM操作 查找元素 选择器查询 12document.querySelectorAll(&amp;apos;div&amp;apos;)document.getElementsByTagName(&amp;apos;div&amp;apos;)  class 查询 12document.querySelectorAll(&amp;apos;.class&amp;apos;);document.getElementsBy">
+<meta property="og:updated_time" content="2019-04-02T04:35:25.022Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue使用的一些总结1">
-<meta name="twitter:description" content="一些vue的个人总结 Vue 实例Vue 应用通过 new Vue 创建的根 Vue 实例，以及可选的嵌套的、可复用的组件树组成。 computed、method、watcher模板内的表达式比较复杂时，我们应当使用计算属性  computed 属性会基于它所依赖的数据进行缓存。每个 computed 属性，只有在它所依赖的数据发生变化时，才会重新取值(re-evaluate) 每当触发重新渲染(">
+<meta name="twitter:title" content="DOM原生操作">
+<meta name="twitter:description" content="自己整理了js常用原生的DOM操作 查找元素 选择器查询 12document.querySelectorAll(&amp;apos;div&amp;apos;)document.getElementsByTagName(&amp;apos;div&amp;apos;)  class 查询 12document.querySelectorAll(&amp;apos;.class&amp;apos;);document.getElementsBy">
   
     <link rel="alternative" href="/atom.xml" title="xiaoxia的博客" type="application/atom+xml">
   
@@ -146,51 +146,94 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue使用的一些总结1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-DOM原生操作" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue使用的一些总结1
+      DOM原生操作
     </h1>
   
 
         
-        <a href="/2018/01/13/vue使用的一些总结1/" class="archive-article-date">
-  	<time datetime="2018-01-13T13:32:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-13</time>
+        <a href="/2019/01/18/DOM原生操作/" class="archive-article-date">
+  	<time datetime="2019-01-18T02:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>一些vue的个人总结</p>
-<h3 id="Vue-实例"><a href="#Vue-实例" class="headerlink" title="Vue 实例"></a>Vue 实例</h3><p>Vue 应用通过 new Vue 创建的根 Vue 实例，以及可选的嵌套的、可复用的组件树组成。</p>
-<h3 id="computed、method、watcher"><a href="#computed、method、watcher" class="headerlink" title="computed、method、watcher"></a>computed、method、watcher</h3><p>模板内的表达式比较复杂时，我们应当使用计算属性</p>
-<ul>
-<li>computed 属性会基于它所依赖的数据进行缓存。每个 computed 属性，只有在它所依赖的数据发生变化时，才会重新取值(re-evaluate)</li>
-<li>每当触发重新渲染(re-render)时，method 调用方式将总是再次执行函数。</li>
-<li>当你需要在数据变化响应时，执行异步操作，或高性能消耗的操作，自定义 watcher 的方式就会很有帮助，而这些都是计算属性无法做到的</li>
+        <p>自己整理了js常用原生的DOM操作</p>
+<h3 id="查找元素"><a href="#查找元素" class="headerlink" title="查找元素"></a>查找元素</h3><ul>
+<li><p>选择器查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.querySelectorAll(&apos;div&apos;)</span><br><span class="line">document.getElementsByTagName(&apos;div&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>class 查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.querySelectorAll(&apos;.class&apos;);</span><br><span class="line">document.getElementsByClassName(&apos;class&apos;);</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <a id="more"></a>
-<h3 id="Vue生命周期"><a href="#Vue生命周期" class="headerlink" title="Vue生命周期"></a>Vue生命周期</h3><p>Vue 实例从开始创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等一系列过程，称为Vue 的生命周期<br>在Vue的整个生命周期中，它提供了一些生命周期钩子</p>
-<ol>
-<li>beforeCreate<br>&ensp;&ensp; 在实例初始化之后，数据观测(data observer) 和 event/watcher 事件配置之前被调用。</li>
-<li>created<br>&ensp;&ensp; 实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算， watch/event 事件回调。然而，挂载阶段还没开始，$el 属性目前不可见。 可以在组件的这个期间请求数据，如果是keep-alive组件会被缓存起来，生命周期不会再次触发</li>
-<li>beforeMount<br>&ensp;&ensp; 在挂载开始之前被调用：相关的 render 函数首次被调用。</li>
-<li>mounted<br>&ensp;&ensp; vm.$el已挂载在文档内，对已有dom节点的操作可以在这期间进行。</li>
-<li>beforeUpdate<br>&ensp;&ensp; 数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。可以在这个钩子中进一步地更改状态，这不会触发附加的重渲染过程。</li>
-<li>updated<br>&ensp;&ensp; 由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。<br>当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态，因为这可能会导致更新无限循环。</li>
-<li>activated<br>&ensp;&ensp; keep-alive 组件激活时调用。</li>
-<li>deactivated<br>&ensp;&ensp; keep-alive 组件停用时调用。</li>
-<li>beforeDestroy<br>&ensp;&ensp; 实例销毁之前调用。在这一步，实例仍然完全可用。</li>
-<li>destroyed<br>&ensp;&ensp; Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。</li>
-</ol>
-<h3 id="Vue-nextTick"><a href="#Vue-nextTick" class="headerlink" title="Vue.nextTick"></a>Vue.nextTick</h3><p>将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。它跟全局方法 Vue.nextTick 一样，不同的是回调的 this 自动绑定到调用它的实例上。</p>
-<h3 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h3><p><code>&lt;keep-alive&gt;</code>是Vue的内置组件，能在组件切换过程中将状态保留在内存中，防止重复渲染DOM。</p>
-<p>当引入keep-alive的时候，页面第一次进入，钩子的触发顺序created-&gt; mounted-&gt; activated，退出时触发deactivated。当再次进入（前进或者后退）时，就不在重新解析而是读取内存中的数据, 钩子只触发activated。</p>
+<ul>
+<li><p>id 查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.querySelector(&apos;#id&apos;);</span><br><span class="line">document.getElementById(&apos;id&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>属性查询</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.querySelectorAll(&apos;a[target=_blank]&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取或设置属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">el.getAttribute(&apos;foo&apos;);</span><br><span class="line">el.setAttribute(&apos;foo&apos;, &apos;bar&apos;);</span><br><span class="line"></span><br><span class="line">el.getAttribute(&apos;data-foo&apos;);</span><br><span class="line">// IE 11+</span><br><span class="line">el.dataset[&apos;foo&apos;];</span><br><span class="line"></span><br><span class="line">document.querySelector(&apos;#my-input&apos;).value;</span><br><span class="line">Array.prototype.indexOf.call(document.querySelectorAll(&apos;.radio&apos;), e.currentTarget);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="CSS-amp-Style"><a href="#CSS-amp-Style" class="headerlink" title="CSS &amp; Style"></a>CSS &amp; Style</h3><ul>
+<li><p>设置样式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">el.style.color = &apos;#ff0011&apos;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>操作class</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">// 添加class，如果存在不添加</span><br><span class="line">el.classList.add(className);</span><br><span class="line">// 移除class</span><br><span class="line">el.classList.remove(className);</span><br><span class="line">// 是否存在class</span><br><span class="line">el.classList.contains(className);</span><br><span class="line">// 如果存在class，删除它；不存在，添加它</span><br><span class="line">el.classList.toggle(className);</span><br><span class="line"></span><br><span class="line">classList支持ie10+,Firefox 3.6+和 Chrome</span><br><span class="line"></span><br><span class="line">// 兼容写法</span><br><span class="line">hasClass (ele, name) &#123;</span><br><span class="line">    return ele.className.match(new RegExp(&apos;(\\s|^)&apos; + name + &apos;(\\s|$)&apos;));</span><br><span class="line">&#125;</span><br><span class="line">addClass (ele, name) &#123;</span><br><span class="line">    if (!this.hasClass(ele, name)) ele.className += &quot; &quot; + name;</span><br><span class="line">&#125;</span><br><span class="line">removeClass (ele, name) &#123;</span><br><span class="line">    if (this.hasClass(ele, name)) &#123;</span><br><span class="line">        var reg = new RegExp(&apos;(\\s|^)&apos; + name + &apos;(\\s|$)&apos;);</span><br><span class="line">        ele.className = ele.className.replace(reg, &apos;&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">toggleClass(el) &#123;</span><br><span class="line">    if (el.classList) &#123;</span><br><span class="line">        el.classList.toggle(className);</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">        var classes = el.className.split(&apos; &apos;);</span><br><span class="line">        var existingIndex = classes.indexOf(className);</span><br><span class="line"></span><br><span class="line">        if (existingIndex &gt;= 0)</span><br><span class="line">            classes.splice(existingIndex, 1);</span><br><span class="line">        else</span><br><span class="line">            classes.push(className);</span><br><span class="line"></span><br><span class="line">        el.className = classes.join(&apos; &apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>隐藏显示</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">el.style.display = &apos;none&apos;</span><br><span class="line">el.style.display = &apos;&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>宽高</p>
+<ul>
+<li><p>window</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 含 scrollbar</span><br><span class="line">window.document.documentElement.clientHeight;</span><br><span class="line">// 不含 scrollbar</span><br><span class="line">window.innerHeight;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Document</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const body = document.body;</span><br><span class="line">const html = document.documentElement;</span><br><span class="line">const height = Math.max(</span><br><span class="line">    body.offsetHeight,</span><br><span class="line">    body.scrollHeight,</span><br><span class="line">    html.clientHeight,</span><br><span class="line">    html.offsetHeight,</span><br><span class="line">    html.scrollHeight</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Element</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function getHeight(el) &#123;</span><br><span class="line">const styles = this.getComputedStyle(el);</span><br><span class="line">const height = el.offsetHeight;</span><br><span class="line">const borderTopWidth = parseFloat(styles.borderTopWidth);</span><br><span class="line">const borderBottomWidth = parseFloat(styles.borderBottomWidth);</span><br><span class="line">const paddingTop = parseFloat(styles.paddingTop);</span><br><span class="line">const paddingBottom = parseFloat(styles.paddingBottom);</span><br><span class="line">return height - borderBottomWidth - borderTopWidth - paddingTop - paddingBottom;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 精确到整数（border-box 时为 height - border 值，content-box 时为 height + padding 值）</span><br><span class="line">el.clientHeight;</span><br><span class="line"></span><br><span class="line">// 精确到小数（border-box 时为 height 值，content-box 时为 height + padding + border 值）</span><br><span class="line">el.getBoundingClientRect().height;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Position\Offset</p>
+<ul>
+<li><p>Position</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 获得匹配元素相对父元素的偏移</span><br><span class="line">&#123; left: el.offsetLeft, top: el.offsetTop &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Offset<br>// 获得匹配元素相对文档的偏移</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function getOffset (el) &#123;</span><br><span class="line">const box = el.getBoundingClientRect();</span><br><span class="line"></span><br><span class="line">return &#123;</span><br><span class="line">    top: box.top + window.pageYOffset - document.documentElement.clientTop,</span><br><span class="line">    left: box.left + window.pageXOffset - document.documentElement.clientLeft</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Scroll Top<br>// 获取元素滚动条垂直位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(document.documentElement &amp;&amp; document.documentElement.scrollTop) || document.body.scrollTop;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="DOM操作"><a href="#DOM操作" class="headerlink" title="DOM操作"></a>DOM操作</h3><ul>
+<li><p>从 DOM 中移除元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">el.parentNode.removeChild(el);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>HTML</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">el.innerHTML;</span><br><span class="line">el.innerHTML = htmlString;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>插入节点</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">el.appendChild(newEl);</span><br><span class="line">el.insertAdjacentHTML(&apos;beforeend&apos;, &apos;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&apos;);</span><br><span class="line"></span><br><span class="line">el.insertBefore(newEl, el.firstChild);</span><br><span class="line">el.insertAdjacentHTML(&apos;afterbegin&apos;, &apos;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&apos;);</span><br><span class="line"></span><br><span class="line">el.insertAdjacentHTML(&apos;beforebegin &apos;, &apos;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&apos;);</span><br><span class="line">const el = document.querySelector(selector);</span><br><span class="line">if (el.parentNode) &#123;</span><br><span class="line">   el.parentNode.insertBefore(newEl, el);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">el.insertAdjacentHTML(&apos;afterend&apos;, &apos;&lt;div id=&quot;container&quot;&gt;Hello World&lt;/div&gt;&apos;);</span><br><span class="line">const el = document.querySelector(selector);</span><br><span class="line">if (el.parentNode) &#123;</span><br><span class="line">  el.parentNode.insertBefore(newEl, el.nextSibling);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
 
       
 
@@ -204,7 +247,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
         		</li>
       		
 		</ul>
@@ -223,18 +266,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/13/git使用的一些小技巧/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          git使用的一些小技巧
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/13/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/01/01/移动端H5开发遇到的坑/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动端H5开发遇到的坑</div>
       <i class="icon-circle-right"></i>
     </a>
   
