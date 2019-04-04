@@ -15,10 +15,12 @@
 <meta property="og:url" content="http://yoursite.com/2019/01/01/前端JS基础篇/index.html">
 <meta property="og:site_name" content="xiaoxia的博客">
 <meta property="og:description" content="个人整理的js的一些基本知识 内置类型js的基础类型分为两大类：基本类型和引用类型 基本类型有六种： null，undefined，boolean，number，string，symbol引用类型：object其中Array，Function，Regexp都是对象，都属于引用类型">
-<meta property="og:updated_time" content="2019-04-01T02:59:59.007Z">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/bbc18a06gy1g1qnp2536dj20rx0buglx.jpg">
+<meta property="og:updated_time" content="2019-04-04T08:07:55.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端JS基础篇">
 <meta name="twitter:description" content="个人整理的js的一些基本知识 内置类型js的基础类型分为两大类：基本类型和引用类型 基本类型有六种： null，undefined，boolean，number，string，symbol引用类型：object其中Array，Function，Regexp都是对象，都属于引用类型">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/bbc18a06gy1g1qnp2536dj20rx0buglx.jpg">
   
     <link rel="alternative" href="/atom.xml" title="xiaoxia的博客" type="application/atom+xml">
   
@@ -171,6 +173,8 @@
 <p>基本类型有六种： null，undefined，boolean，number，string，symbol<br>引用类型：object<br>其中Array，Function，Regexp都是对象，都属于引用类型</p>
 <a id="more"></a>
 <p>基本类型数据存储在栈中，据有固定的存储空间，便于迅速快速查找<br>引用类型数据存储在堆，其实存储的值是一个指针，指向存储对象的内存地址<br>引用类型数据大小会改变，所以不能把它放在栈中</p>
+<h3 id="null-和-undefined"><a href="#null-和-undefined" class="headerlink" title="null 和 undefined"></a>null 和 undefined</h3><p>undefined：使用var声明但是没有初始化，默认赋值为undefined<br>null:  表示为空对象指针<br>NaN: Not a Number，非数值，与任何数值都不相等，包括自身，与NaN的任何操作都会返回NaN<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">typeof undefined  // undefined </span><br><span class="line">typeof null // object</span><br><span class="line">typeof NaN // number</span><br><span class="line">NaN instanceof Number  // false</span><br><span class="line">undefined == null // true</span><br><span class="line">1 == NaN // false</span><br><span class="line">NaN == NaN // false</span><br><span class="line">null == NaN // false</span><br><span class="line">// 在if条件判断下，null、NaN和undefined都为false</span><br></pre></td></tr></table></figure></p>
+<h3 id="x-y-和-x-y"><a href="#x-y-和-x-y" class="headerlink" title="x==y 和 x===y"></a>x==y 和 x===y</h3><p>x==y<br>对于 == 来说，如果对比双方的类型不一样的话，就会进行类型转换<br>首先会判断两者类型是否相同。相同的话就是比大小了<br>类型不相同的话，那么就会进行类型转换<br>会先判断是否在对比 null 和 undefined，是的话就会返回 true<br>判断两者类型是否为 string 和 number，是的话就会将字符串转换为 number<br><img src="https://ws1.sinaimg.cn/large/bbc18a06gy1g1qnp2536dj20rx0buglx.jpg" alt=""><br>对于 === 来说就简单多了，就是判断两者类型和值是否相同。<br>[] == ![] </p>
 <h3 id="var-let-const"><a href="#var-let-const" class="headerlink" title="var let const"></a>var let const</h3><p>变量提示：变量声明后会把变量的声明提升到作用域顶部<br>暂时性死区：用let、const声明了变量之后，给变量赋值之前的代码区域</p>
 <p>var 存在提升，我们能在声明之前使用，并且可以重复声明<br>let、const 因为暂时性死区的原因，不能在声明前使用，const声明的变量不能再次赋值</p>
 <h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p>ES5 中作用域有：全局作用域、函数作用域、eval函数作用域。没有块作用域的概念<br>ES6 中新增了块级作用域。块作用域由 { } 包括，if语句和 for语句里面的{ }也属于块作用域</p>
@@ -356,15 +360,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -372,7 +368,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">杂谈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
              
               <li class="article-tag-list-item">
