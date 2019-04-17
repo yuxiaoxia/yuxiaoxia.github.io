@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/4 | xiaoxia的博客</title>
+  <title>移动端开发遇到的一些问题总结 | xiaoxia的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生活是自己的">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xiaoxia的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2018/04/index.html">
+  <meta name="description" content="本地开发移动端调试 微信端可以使用vConsole调试 https://github.com/Tencent/vConsole webpack 配置IP和端口号调式webpack搭建本地服务器的时候可以修改配置来连接手机调式">
+<meta name="keywords" content="前端开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="移动端开发遇到的一些问题总结">
+<meta property="og:url" content="http://yoursite.com/2019/01/01/移动端开发遇到的一些问题总结/index.html">
 <meta property="og:site_name" content="xiaoxia的博客">
-<meta property="og:description" content="生活是自己的">
+<meta property="og:description" content="本地开发移动端调试 微信端可以使用vConsole调试 https://github.com/Tencent/vConsole webpack 配置IP和端口号调式webpack搭建本地服务器的时候可以修改配置来连接手机调式">
+<meta property="og:updated_time" content="2019-04-17T10:54:08.662Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xiaoxia的博客">
-<meta name="twitter:description" content="生活是自己的">
+<meta name="twitter:title" content="移动端开发遇到的一些问题总结">
+<meta name="twitter:description" content="本地开发移动端调试 微信端可以使用vConsole调试 https://github.com/Tencent/vConsole webpack 配置IP和端口号调式webpack搭建本地服务器的时候可以修改配置来连接手机调式">
   
     <link rel="alternative" href="/atom.xml" title="xiaoxia的博客" type="application/atom+xml">
   
@@ -144,60 +146,147 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-移动端开发遇到的一些问题总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/04/24/CSS一些实用技巧/" class="archive-article-date">
-  	<time datetime="2018-04-24T01:37:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-24</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/04/24/CSS一些实用技巧/">CSS一些实用技巧</a>
+    <h1 class="article-title" itemprop="name">
+      移动端开发遇到的一些问题总结
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/01/01/移动端开发遇到的一些问题总结/" class="archive-article-date">
+  	<time datetime="2019-01-01T07:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="本地开发移动端调试"><a href="#本地开发移动端调试" class="headerlink" title="本地开发移动端调试"></a>本地开发移动端调试</h3><ul>
+<li>微信端可以使用vConsole调试 <a href="https://github.com/Tencent/vConsole" target="_blank" rel="noopener">https://github.com/Tencent/vConsole</a></li>
+<li>webpack 配置IP和端口号调式<br>webpack搭建本地服务器的时候可以修改配置来连接手机调式</li>
+</ul>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">  host: &apos;192.168.0.1&apos;, // 自己电脑IP</span><br><span class="line">  inline: true,</span><br><span class="line">  port: 8090,</span><br><span class="line">  colors: true</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>或者package.json中修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">   &quot;dev&quot;: &quot;webpack-dev-server --inline --progress --host 192.168.0.1 --host 8090 --config build/webpack.dev.conf.js&quot;,</span><br><span class="line">   &quot;start&quot;: &quot;npm run dev&quot;,</span><br><span class="line">   &quot;build&quot;: &quot;node build/build.js&quot;</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
+<p>如果手机不可以访问，可以试试把IP改成 0.0.0.0 (0.0.0.0是广播地址)</p>
+<h3 id="微信分享签名错误invalid-signature"><a href="#微信分享签名错误invalid-signature" class="headerlink" title="微信分享签名错误invalid signature"></a>微信分享签名错误invalid signature</h3><p>vue单页应用history模式下微信分享一直提示签名错误invalid signature</p>
+<p>按照微信官网文档，已经引入jssdk，正确的配置js安全域名，后台开发人员生成的签名也通过微信签名工具验证，但是前端的自定义分享一直报签名错误，没有办法自定义分享，如果确保了哪些基本配置没有问题，并且签名也通过了微信签名工具验证，那么可能就是前端访问的url和后台生成签名的url不一致导致的签名错误</p>
+<p>前端如果是通过ajax将url传到后端获取签名，那么我们需要将当前页面除去’#’hash部分的链接，并且需要encodeURIComponent<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let url = location.href.split(&apos;#&apos;)[0]</span><br><span class="line">encodeURIComponent(url)</span><br></pre></td></tr></table></figure></p>
+<p>正常来说这样就可以实现微信自定义分享了，但是单页应用路由切换了之后IOS端还是提示签名错误，安卓端没有问题</p>
+<p>这是因为history模式下视图是通过pushState来切换的，但是IOS微信客户端（安卓客户端已经修复了）不支持pushState的H5新特性，所以路由变化了但是微信浏览器获取到的url没有变化，右上角复制链接发现，微信记录的url还是第一次进入时的url，除非你手动刷新，或者使用window.location等页面跳转方法刷新，才能获取到最新的url</p>
+<p>解决的办法是页面进入的时候记录url，如果是iOS设备那么使用这个url获取微信签名<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">router.afterEach(to =&gt; &#123;</span><br><span class="line">  sessionStorage.setItem(&apos;currentUrl&apos;,window.location.href)</span><br><span class="line">&#125;)</span><br><span class="line">let url = encodeURIComponent(location.href.split(&apos;#&apos;)[0])</span><br><span class="line">if(system == &quot;iOS&quot; &amp;&amp; sessionStorage.getItem(&apos;currentUrl&apos;)) &#123;</span><br><span class="line">  url = encodeURIComponent(sessionStorage.getItem(&apos;currentUrl&apos;).split(&apos;#&apos;)[0])</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这个时候拿这个url去获取微信签名就是正确的了，该方法只适合IOS设备，只要获取签名的url和微信记录的url一致签名就是正确的</p>
+<h3 id="往返缓存问题"><a href="#往返缓存问题" class="headerlink" title="往返缓存问题"></a>往返缓存问题</h3><p>点击浏览器的前进和回退，有时候不会自动执行js，特别是在safari中，这与往返缓存(bfcache)有关系。<br>解决方法 ：window.onunload = function(){};</p>
+<p>如果是Vue单页应用，并且使用了keep-alive的话，页面也不会刷新，这时候一些接口请求等可以放在beforeRouteEnter方法中</p>
+<h3 id="IOS端不支持new-Date-“2019-01-01-00-00-00”-这种格式"><a href="#IOS端不支持new-Date-“2019-01-01-00-00-00”-这种格式" class="headerlink" title="IOS端不支持new Date(“2019-01-01 00:00:00”) 这种格式"></a>IOS端不支持new Date(“2019-01-01 00:00:00”) 这种格式</h3><p>这种写法new Date(“2019-01-01 00:00:00”)在安卓端是支持的，但是在IOS端不支持，会报NAN错误，所以需要把new Date(“2019-01-01 00:00:00”)改成new Date(“2019/01/01 00:00:00”)这种形式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let date = &apos;2019-01-01 00:00:00&apos;</span><br><span class="line">date.replace(/\-/g, &apos;/&apos;)</span><br></pre></td></tr></table></figure></p>
+<h3 id="微信二维码"><a href="#微信二维码" class="headerlink" title="微信二维码"></a>微信二维码</h3><p>一个页面可能有多个二维码，但是长按识别二维码只能识别最后一个二维码，这个时候我们需要控制页面可视区域内只能出现一个二维码</p>
+<h3 id="audio音频无法播放"><a href="#audio音频无法播放" class="headerlink" title="audio音频无法播放"></a>audio音频无法播放</h3><p>audio.play() 方法在安卓设备可以正常播放，但是在IOS客户端不能播放，在设置了audio的src之后，我们需要加上这一行代码<br><code>audio.load()</code> 去加载音频</p>
+<p>可以通过监听loadeddata方法看音频是否可以开始播放了，安卓设置在音频加载好了之后就开始播放，但是iOS端可能稍微有延迟，这个时候我们可以通过<code>audio.currentTime</code>获取到音频是否开始播放,这个值大于0就说明已经开始播放了</p>
+<h3 id="IOS移动端click事件300ms的延迟响应"><a href="#IOS移动端click事件300ms的延迟响应" class="headerlink" title="IOS移动端click事件300ms的延迟响应"></a>IOS移动端click事件300ms的延迟响应</h3><p>fastClick.js</p>
+<h3 id="IOS中无法点击"><a href="#IOS中无法点击" class="headerlink" title="IOS中无法点击"></a>IOS中无法点击</h3><p>span,div 等默认无法点击的标签 在IOS中监听click事件点击无效<br>解决办法，添加 cursor: pointer;</p>
+<h3 id="使用vmvh单位"><a href="#使用vmvh单位" class="headerlink" title="使用vmvh单位"></a>使用vmvh单位</h3><p>PostCSS的插件postcss-px-to-viewport可以帮助我们将px单位转换成视窗单位</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&quot;postcss-px-to-viewport&quot;: &#123;</span><br><span class="line">    viewportWidth: 750, // 设计稿宽度</span><br><span class="line">    viewportHeight: 1334,</span><br><span class="line">    unitPrecision: 5,</span><br><span class="line">    viewportUnit: &apos;vw&apos;,</span><br><span class="line">    selectorBlackList: [],</span><br><span class="line">    minPixelValue: 1,</span><br><span class="line">    mediaQuery: false</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="fixed问题"><a href="#fixed问题" class="headerlink" title="fixed问题"></a>fixed问题</h3><p>在ios8以下系统，当小键盘激活时，都会出现位置浮动问题<br>解决方法：只需要在中间部分外层div添加css样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">position:fixed;</span><br><span class="line">top:50px;</span><br><span class="line">bottom:50px;</span><br><span class="line">overflow:scroll;</span><br></pre></td></tr></table></figure></p>
+<h3 id="1px像素问题"><a href="#1px像素问题" class="headerlink" title="1px像素问题"></a>1px像素问题</h3><ul>
+<li>使用border-image<br>PostCSS插件postcss-write-svg，可以解决1px像素问题，这样可以避免我们去调整图片</li>
+</ul>
+<p><a href="https://github.com/jonathantneal/postcss-write-svg" target="_blank" rel="noopener">https://github.com/jonathantneal/postcss-write-svg</a></p>
+<p><a href="https://www.w3cplus.com/css/fix-1px-for-retina.html" target="_blank" rel="noopener">https://www.w3cplus.com/css/fix-1px-for-retina.html</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@svg 1px-border &#123; </span><br><span class="line">  height: 2px; </span><br><span class="line">  @rect &#123; </span><br><span class="line">    fill: var(--color, black); width: 100%; height: 50%; </span><br><span class="line">  &#125; </span><br><span class="line">&#125; </span><br><span class="line">.example &#123; </span><br><span class="line">  border: 1px solid transparent; </span><br><span class="line">  border-image: svg(1px-border param(--color #00b1ff)) 2 2 stretch; </span><br><span class="line">&#125;</span><br><span class="line">编译后</span><br><span class="line">.example &#123; </span><br><span class="line">  border: 1px solid transparent; </span><br><span class="line">  border-image: svg(1px-border param(--color #00b1ff)) 2 2 stretch; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>使用background-image</li>
+<li>使用transform进行缩放</li>
+</ul>
+<h3 id="第三方ui框架px单位被转换成rem"><a href="#第三方ui框架px单位被转换成rem" class="headerlink" title="第三方ui框架px单位被转换成rem"></a>第三方ui框架px单位被转换成rem</h3><p>h5开发中，我们可能会引入淘宝的flexible框架和postcss-px2rem来做rem单位转换自适应，但是引入的第三方框架一般是使用px单位，引入之后可能单位会被转换成rem，导致布局错乱</p>
+<p>解决办法是引入postcss-px2rem-exclude来排除第三方框架单位转换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">postcss: [</span><br><span class="line"> require(&apos;postcss-px2rem-exclude&apos;)(&#123;</span><br><span class="line">     remUnit: 32,</span><br><span class="line">     exclude: /(\/|\\)(node_modules)(\/|\\)/</span><br><span class="line">   &#125;),</span><br><span class="line"> ]</span><br></pre></td></tr></table></figure></p>
+<p>这是网上的说法，但是在我的项目不起作用，所以我手动改了postcss-px2rem这个插件源码，添加上一次判断<br>node_modules/postcss-px2rem/lib/index.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> postcss: [</span><br><span class="line">	require(&apos;postcss-px2rem&apos;)(&#123;</span><br><span class="line">		remUnit: 75,</span><br><span class="line">		exclude: /(\/|\\)(node_modules)(\/|\\)/</span><br><span class="line">	&#125;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = postcss.plugin(&apos;postcss-px2rem&apos;, function (options) &#123;</span><br><span class="line">  return function (css, result) &#123;</span><br><span class="line">	if (options.exclude &amp;&amp; css.source.input.file.match(options.exclude) !== null) &#123;</span><br><span class="line">      result.root = css;</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    var oldCssText = css.toString();</span><br><span class="line">    var px2remIns = new Px2rem(options);</span><br><span class="line">    var newCssText = px2remIns.generateRem(oldCssText);</span><br><span class="line">    var newCssObj = postcss.parse(newCssText);</span><br><span class="line">    result.root = newCssObj;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>还有一种方案是将第三方框架的px单位转换成PX，这样可以避免px被转换成rem</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  &#123;</span><br><span class="line">    name: &apos;after-less-parser&apos;,</span><br><span class="line">    fn: function (source) &#123;</span><br><span class="line">      if  (this.resourcePath.replace(/\\/g, &apos;/&apos;).indexOf(&apos;vux/src/components&apos;) &gt; -1) &#123;</span><br><span class="line">        source = source.replace(/px/g, &apos;PX&apos;)</span><br><span class="line">      &#125;</span><br><span class="line">      return source</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: &apos;style-parser&apos;,</span><br><span class="line">    fn: function (source) &#123;</span><br><span class="line">      if (this.resourcePath.replace(/\\/g, &apos;/&apos;).indexOf(&apos;vux/src/components&apos;) &gt; -1) &#123;</span><br><span class="line">        source = source.replace(/px/g, &apos;PX&apos;)</span><br><span class="line">      &#125;</span><br><span class="line">      return source</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="处理手指按下透明遮罩层"><a href="#处理手指按下透明遮罩层" class="headerlink" title="处理手指按下透明遮罩层"></a>处理手指按下透明遮罩层</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">    -webkit-tap-highlight-color: transparent;</span><br><span class="line">&#125;</span><br><span class="line">// 处理表单元素默认样式</span><br><span class="line">input &#123;</span><br><span class="line">    -webkit-appearance: none; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2019/01/02/async、await和promise的一些理解/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          async、await和promise的一些理解
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2019/01/01/前端JS基础篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端JS基础篇</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -220,8 +309,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
