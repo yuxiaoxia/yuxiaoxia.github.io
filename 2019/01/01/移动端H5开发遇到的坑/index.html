@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/01/01/移动端H5开发遇到的坑/index.html">
 <meta property="og:site_name" content="xiaoxia的博客">
 <meta property="og:description" content="微信分享签名错误invalid signaturevue单页应用history模式下微信分享一直提示签名错误invalid signature 按照微信官网文档，已经引入jssdk，正确的配置js安全域名，后台开发人员生成的签名也通过微信签名工具验证，但是前端的自定义分享一直报签名错误，没有办法自定义分享，如果确保了哪些基本配置没有问题，并且签名也通过了微信签名工具验证，那么可能就是前端访问的ur">
-<meta property="og:updated_time" content="2019-03-30T06:04:04.434Z">
+<meta property="og:updated_time" content="2019-04-15T07:23:17.262Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="移动端H5开发遇到的坑">
 <meta name="twitter:description" content="微信分享签名错误invalid signaturevue单页应用history模式下微信分享一直提示签名错误invalid signature 按照微信官网文档，已经引入jssdk，正确的配置js安全域名，后台开发人员生成的签名也通过微信签名工具验证，但是前端的自定义分享一直报签名错误，没有办法自定义分享，如果确保了哪些基本配置没有问题，并且签名也通过了微信签名工具验证，那么可能就是前端访问的ur">
@@ -182,7 +182,14 @@
 <h3 id="audio音频无法播放"><a href="#audio音频无法播放" class="headerlink" title="audio音频无法播放"></a>audio音频无法播放</h3><p>audio.play() 方法在安卓设备可以正常播放，但是在IOS客户端不能播放，在设置了audio的src之后，我们需要加上这一行代码<br><code>audio.load()</code> 去加载音频</p>
 <p>可以通过监听loadeddata方法看音频是否可以开始播放了，安卓设置在音频加载好了之后就开始播放，但是iOS端可能稍微有延迟，这个时候我们可以通过<code>audio.currentTime</code>获取到音频是否开始播放,这个值大于0就说明已经开始播放了</p>
 <h3 id="IOS移动端click事件300ms的延迟响应"><a href="#IOS移动端click事件300ms的延迟响应" class="headerlink" title="IOS移动端click事件300ms的延迟响应"></a>IOS移动端click事件300ms的延迟响应</h3><h3 id="fixed问题"><a href="#fixed问题" class="headerlink" title="fixed问题"></a>fixed问题</h3><p>在ios8以下系统，当小键盘激活时，都会出现位置浮动问题<br>解决方法：只需要在中间部分外层div添加css样式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">position:fixed;</span><br><span class="line">top:50px;</span><br><span class="line">bottom:50px;</span><br><span class="line">overflow:scroll;</span><br></pre></td></tr></table></figure></p>
-
+<h3 id="1px像素问题"><a href="#1px像素问题" class="headerlink" title="1px像素问题"></a>1px像素问题</h3><h3 id="第三方ui框架px单位被转换成rem"><a href="#第三方ui框架px单位被转换成rem" class="headerlink" title="第三方ui框架px单位被转换成rem"></a>第三方ui框架px单位被转换成rem</h3><p>h5开发中，我们可能会引入淘宝的flexible框架和postcss-px2rem来做rem单位转换自适应，但是引入的第三方框架一般是使用px单位，引入之后可能单位会被转换成rem，导致布局错乱</p>
+<p>解决办法是引入postcss-px2rem-exclude来排除第三方框架单位转换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">postcss: [</span><br><span class="line"> require(&apos;postcss-px2rem-exclude&apos;)(&#123;</span><br><span class="line">     remUnit: 32,</span><br><span class="line">     exclude: /(\/|\\)(node_modules)(\/|\\)/</span><br><span class="line">   &#125;),</span><br><span class="line"> ]</span><br></pre></td></tr></table></figure></p>
+<p>这是网上的说法，但是在我的项目不起作用，所以我手动改了postcss-px2rem这个插件源码，添加上一次判断<br>node_modules/postcss-px2rem/lib/index.js</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> postcss: [</span><br><span class="line">	require(&apos;postcss-px2rem&apos;)(&#123;</span><br><span class="line">		remUnit: 75,</span><br><span class="line">		exclude: /(\/|\\)(node_modules)(\/|\\)/</span><br><span class="line">	&#125;),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">module.exports = postcss.plugin(&apos;postcss-px2rem&apos;, function (options) &#123;</span><br><span class="line">  return function (css, result) &#123;</span><br><span class="line">	if (options.exclude &amp;&amp; css.source.input.file.match(options.exclude) !== null) &#123;</span><br><span class="line">      result.root = css;</span><br><span class="line">      return</span><br><span class="line">    &#125;</span><br><span class="line">    var oldCssText = css.toString();</span><br><span class="line">    var px2remIns = new Px2rem(options);</span><br><span class="line">    var newCssText = px2remIns.generateRem(oldCssText);</span><br><span class="line">    var newCssObj = postcss.parse(newCssText);</span><br><span class="line">    result.root = newCssObj;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>还有一种方案是将第三方框架的px单位转换成PX，这样可以避免px被转换成rem</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  &#123;</span><br><span class="line">    name: &apos;after-less-parser&apos;,</span><br><span class="line">    fn: function (source) &#123;</span><br><span class="line">      if  (this.resourcePath.replace(/\\/g, &apos;/&apos;).indexOf(&apos;vux/src/components&apos;) &gt; -1) &#123;</span><br><span class="line">        source = source.replace(/px/g, &apos;PX&apos;)</span><br><span class="line">      &#125;</span><br><span class="line">      return source</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: &apos;style-parser&apos;,</span><br><span class="line">    fn: function (source) &#123;</span><br><span class="line">      if (this.resourcePath.replace(/\\/g, &apos;/&apos;).indexOf(&apos;vux/src/components&apos;) &gt; -1) &#123;</span><br><span class="line">        source = source.replace(/px/g, &apos;PX&apos;)</span><br><span class="line">      &#125;</span><br><span class="line">      return source</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="处理手指按下透明遮罩层"><a href="#处理手指按下透明遮罩层" class="headerlink" title="处理手指按下透明遮罩层"></a>处理手指按下透明遮罩层</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a &#123;</span><br><span class="line">    -webkit-tap-highlight-color: transparent;</span><br><span class="line">&#125;</span><br><span class="line">// 处理表单元素默认样式</span><br><span class="line">input &#123;</span><br><span class="line">    -webkit-appearance: none; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
       
@@ -214,18 +221,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/01/前端JS基础篇/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/01/02/async、await和promise的一些理解/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          前端JS基础篇
+          async、await和promise的一些理解
         
       </div>
     </a>
   
   
-    <a href="/2018/10/13/Mac系统一些工具推荐/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mac系统一些工具推荐</div>
+    <a href="/2019/01/01/前端JS基础篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端JS基础篇</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -343,7 +350,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -351,11 +362,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
