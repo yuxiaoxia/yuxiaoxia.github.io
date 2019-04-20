@@ -144,12 +144,12 @@
               // var target = src + (type === 'video' ? '.mp4' : '.jpg');
               var target = src;
               var text = data.text[i]
-              var dataSize = '1000x640'
-              loadSize(src + '?x-oss-process=image/info', function(data) {
-                dataSize = data.ImageWidth.value + 'x' + data.ImageHeight.value
-              })
+              var dataSize = '1000x1000'
+              // loadSize(src + '?x-oss-process=image/info', function(data) {
+              //   dataSize = data.ImageWidth.value + 'x' + data.ImageHeight.value
+              // })
               liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
-                    <a href="' + src + '" itemprop="contentUrl" data-size="'+dataSize+'" data-type="' + type + '" data-target="' + target + '">\
+                    <a class="ahref" href="' + src + '" itemprop="contentUrl" data-size="'+dataSize+'" data-type="' + type + '" data-target="' + target + '">\
                       <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="/assets/img/empty.png" itemprop="thumbnail" onload="lzld(this)">\
                     </a>\
                     <figcaption style="display:none" itemprop="caption description">' + text + '</figcaption>\
@@ -263,7 +263,6 @@
           'src': 'data-src',
           'container': false
         }, opts || {});
-
         if (typeof opts.src === 'string') {
           registerLazyAttr(opts.src);
         }
@@ -275,8 +274,20 @@
 
           if (src) {
             elt.src = src;
+            elt.onload = function() {
+              var naturalWidth = elt.naturalWidth
+              var naturalHeight = elt.naturalHeight
+              if(naturalWidth >= naturalHeight) {
+                elt.style.height = '100%'
+                elt.style.width = 'auto'
+                elt.style.maxWidth = 'max-content'
+              } else {
+                elt.style.height = 'auto'
+                elt.style.maxWidth = 'max-content'
+                elt.style.width = '100%'
+              }
+            }
           }
-
           elt.setAttribute('data-lzled', true);
           elts[indexOf.call(elts, elt)] = null;
         }
@@ -388,7 +399,6 @@
           }
 
           linkEl = figureEl.children[0]; // 
-
           size = linkEl.getAttribute('data-size').split('x');
           type = linkEl.getAttribute('data-type');
           target = linkEl.getAttribute('data-target');
@@ -396,8 +406,8 @@
           // create slide object
           item = {
             src: src,
-            w: parseInt(size[0], 10),
-            h: parseInt(size[1], 10)
+            w: linkEl.children[0].naturalWidth * 2,
+            h: linkEl.children[0].naturalHeight * 2
           };
 
           if (figureEl.children.length > 1) {

@@ -127,7 +127,17 @@
 	border: 1px solid #e5e5e5;
 	border-bottom: 5px solid #fff;
 }
-
+.ahref{
+	height: 100%;
+    position: absolute !important;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+	display: flex;
+    align-items: center;
+	justify-content: center;
+}
 @media screen and (max-width:600px) {
 	.instagram .thumb {
 		width: 50%;
