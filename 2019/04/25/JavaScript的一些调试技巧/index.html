@@ -6,19 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>git使用的一些小技巧 | xiaoxia的博客</title>
+  <title>JavaScript的一些调试技巧 | xiaoxia的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="下面列举一些git使用的小技巧，陆续会补充 git-提取/合并某分支的部分文件git中可以使用merge合并分支内容，特殊情况下，我们可能需要将一个分支的部分文件合并到主分支，例如，某个分支的部分功能需要上线，而另一部分功能开发到一半，这时候，我们只需要提交需要上线的代码。当然你可以手动 copy 代码，但git能做到的我们就不要copy代码啦。git中可以使用checkout从某个分支中检出相应">
-<meta name="keywords" content="git">
+  <meta name="description" content="debugger;在js代码中，加入debugger;为我们的代码设置断点进行调试 将对象以表格的形式展示123456var obj = [    &amp;#123; name: &amp;quot;name1&amp;quot;, title: &amp;apos;111&amp;apos; &amp;#125;,    &amp;#123; name: &amp;quot;name2&amp;quot;, title: &amp;apos;111&amp;apos; &amp;#125">
+<meta name="keywords" content="前端开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git使用的一些小技巧">
-<meta property="og:url" content="http://yoursite.com/2018/01/13/git使用的一些小技巧/index.html">
+<meta property="og:title" content="JavaScript的一些调试技巧">
+<meta property="og:url" content="http://yoursite.com/2019/04/25/JavaScript的一些调试技巧/index.html">
 <meta property="og:site_name" content="xiaoxia的博客">
-<meta property="og:description" content="下面列举一些git使用的小技巧，陆续会补充 git-提取/合并某分支的部分文件git中可以使用merge合并分支内容，特殊情况下，我们可能需要将一个分支的部分文件合并到主分支，例如，某个分支的部分功能需要上线，而另一部分功能开发到一半，这时候，我们只需要提交需要上线的代码。当然你可以手动 copy 代码，但git能做到的我们就不要copy代码啦。git中可以使用checkout从某个分支中检出相应">
-<meta property="og:updated_time" content="2019-03-29T12:50:36.170Z">
+<meta property="og:description" content="debugger;在js代码中，加入debugger;为我们的代码设置断点进行调试 将对象以表格的形式展示123456var obj = [    &amp;#123; name: &amp;quot;name1&amp;quot;, title: &amp;apos;111&amp;apos; &amp;#125;,    &amp;#123; name: &amp;quot;name2&amp;quot;, title: &amp;apos;111&amp;apos; &amp;#125">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/bbc18a06gy1g2f01k175dj21bm050aad.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/bbc18a06gy1g2f0dj56f5j20xm0wadkf.jpg">
+<meta property="og:updated_time" content="2019-04-25T09:29:50.942Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git使用的一些小技巧">
-<meta name="twitter:description" content="下面列举一些git使用的小技巧，陆续会补充 git-提取/合并某分支的部分文件git中可以使用merge合并分支内容，特殊情况下，我们可能需要将一个分支的部分文件合并到主分支，例如，某个分支的部分功能需要上线，而另一部分功能开发到一半，这时候，我们只需要提交需要上线的代码。当然你可以手动 copy 代码，但git能做到的我们就不要copy代码啦。git中可以使用checkout从某个分支中检出相应">
+<meta name="twitter:title" content="JavaScript的一些调试技巧">
+<meta name="twitter:description" content="debugger;在js代码中，加入debugger;为我们的代码设置断点进行调试 将对象以表格的形式展示123456var obj = [    &amp;#123; name: &amp;quot;name1&amp;quot;, title: &amp;apos;111&amp;apos; &amp;#125;,    &amp;#123; name: &amp;quot;name2&amp;quot;, title: &amp;apos;111&amp;apos; &amp;#125">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/bbc18a06gy1g2f01k175dj21bm050aad.jpg">
   
     <link rel="alternative" href="/atom.xml" title="xiaoxia的博客" type="application/atom+xml">
   
@@ -146,50 +149,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-git使用的一些小技巧" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JavaScript的一些调试技巧" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      git使用的一些小技巧
+      JavaScript的一些调试技巧
     </h1>
   
 
         
-        <a href="/2018/01/13/git使用的一些小技巧/" class="archive-article-date">
-  	<time datetime="2018-01-13T13:43:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-13</time>
+        <a href="/2019/04/25/JavaScript的一些调试技巧/" class="archive-article-date">
+  	<time datetime="2019-04-25T07:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>下面列举一些git使用的小技巧，陆续会补充</p>
-<h3 id="git-提取-合并某分支的部分文件"><a href="#git-提取-合并某分支的部分文件" class="headerlink" title="git-提取/合并某分支的部分文件"></a>git-提取/合并某分支的部分文件</h3><p>git中可以使用merge合并分支内容，特殊情况下，我们可能需要将一个分支的部分文件合并到主分支，例如，某个分支的部分功能需要上线，而另一部分功能开发到一半，这时候，我们只需要提交需要上线的代码。当然你可以手动 copy 代码，但git能做到的我们就不要copy代码啦。git中可以使用checkout从某个分支中检出相应文件<br>使用方法<code>git checkout [branch] -- [file name]</code></p>
-<a id="more"></a>
-<h3 id="git忽略文件"><a href="#git忽略文件" class="headerlink" title="git忽略文件"></a>git忽略文件</h3><p>git可以忽略那些特定的文件和文件夹，这些文件就不会被添加到git仓库了。只需要创建一个名为 .gitignore 然后列出那些你不希望 Git 跟踪的文件和文件夹。你还可以添加例外，通过使用感叹号(!)。<br>.svn<br>node_modules<br>bower_components<br>.idea<br>.npm-debug.log<br>!main.pyc</p>
-<h3 id="清除本地分支"><a href="#清除本地分支" class="headerlink" title="清除本地分支"></a>清除本地分支</h3><p>本地其实有很多早就被删除的远程分支，可以用<br><code>git remote prune origin</code><br>全部清除掉，这样再 checkout 别的分支时就清晰多了</p>
-<h3 id="基于远程分支创建分支"><a href="#基于远程分支创建分支" class="headerlink" title="基于远程分支创建分支"></a>基于远程分支创建分支</h3><p><code>git checkout -b feature origin/feature</code></p>
-<h3 id="更新本地代码"><a href="#更新本地代码" class="headerlink" title="更新本地代码"></a>更新本地代码</h3><p>不知道是什么原因，本地代码更改之后git pull拉取远端代码获取不到最新的，但是显示Already up-to-date</p>
-<p>这个时候可以尝试 git status，来显示工作目录和暂存区的状态，再拉取代码<br><code>git status
- git pull
- git checkout 分支名</code></p>
-<p>也可以把HEAD指向最新下载的版本</p>
-<p><code>git reset --hard origin/分支名如master</code></p>
-<p>强制覆盖本地代码</p>
-<p><code>git fetch --all &amp;&amp; git reset --hard origin/master &amp;&amp; git pull</code></p>
-<h3 id="大小写问题"><a href="#大小写问题" class="headerlink" title="大小写问题"></a>大小写问题</h3><p>在当前项目中，早先创建并已经push到远程的文件及文件夹，将名称大小写更改后，git无法检测出更改。<br><code>git config core.ignorecase false</code>，关闭git忽略大小写配置，即可检测到大小写名称更改<br>这样可能会产成两个文件，一个大写文件一个小写文件</p>
-<h3 id="找出罪魁祸首"><a href="#找出罪魁祸首" class="headerlink" title="找出罪魁祸首"></a>找出罪魁祸首</h3><p>当代码挂了的时候，使用git blame命令可以找出罪魁祸首。这个命令可以将文件中的每一行的作者、最新的变更提交和提交时间展示出来。<br><code>git blame [file_name]</code></p>
-<h3 id="查看提交内容"><a href="#查看提交内容" class="headerlink" title="查看提交内容"></a>查看提交内容</h3><ul>
-<li>仅仅想看最近谁有提交，以及提交的描述<br><code>git log</code></li>
-<li>仅仅想看最后一次的提交<br><code>git log -n 1</code></li>
-<li>想看到最近一次提交所有更改过的文件<br><code>git log -n 1 --stat</code></li>
-<li>想看到最近一次提交所有更改的细节<br><code>git log -n 1 -p</code></li>
+        <h3 id="debugger"><a href="#debugger" class="headerlink" title="debugger;"></a>debugger;</h3><p>在js代码中，加入<code>debugger;</code>为我们的代码设置断点进行调试</p>
+<h3 id="将对象以表格的形式展示"><a href="#将对象以表格的形式展示" class="headerlink" title="将对象以表格的形式展示"></a>将对象以表格的形式展示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj = [</span><br><span class="line">    &#123; name: &quot;name1&quot;, title: &apos;111&apos; &#125;,</span><br><span class="line">    &#123; name: &quot;name2&quot;, title: &apos;111&apos; &#125;,</span><br><span class="line">    &#123; name: &quot;name3&quot;, title: &apos;111&apos; &#125;,</span><br><span class="line">];</span><br><span class="line">console.table(obj);</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/bbc18a06gy1g2f01k175dj21bm050aad.jpg" alt=""></p>
+<h3 id="使用-console-time-和-console-timeEnd-来记录时间"><a href="#使用-console-time-和-console-timeEnd-来记录时间" class="headerlink" title="使用 console.time()和 console.timeEnd()来记录时间"></a>使用 console.time()和 console.timeEnd()来记录时间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.time(&quot;time&quot;);</span><br><span class="line">var items = [];</span><br><span class="line">for (var i = 0; i &lt; 100000; i++) &#123;</span><br><span class="line">    items.push(&#123; index: i &#125;);</span><br><span class="line">&#125;</span><br><span class="line">console.timeEnd(&quot;time&quot;); // time: 29.7890625ms</span><br></pre></td></tr></table></figure>
+<h3 id="获取某个函数的-Stacktrace"><a href="#获取某个函数的-Stacktrace" class="headerlink" title="获取某个函数的 Stacktrace"></a>获取某个函数的 Stacktrace</h3><p>使用console.trace依然可以快速定位函数，在一些复杂的代码里，可以查看函数调用情况<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var car;</span><br><span class="line">var func1 = function() &#123;</span><br><span class="line">  func2();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var func2 = function() &#123;</span><br><span class="line">  func4();</span><br><span class="line">&#125;</span><br><span class="line">var func3 = function() &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var func4 = function() &#123;</span><br><span class="line">  car = new Car();</span><br><span class="line">  car.funcX();</span><br><span class="line">&#125;</span><br><span class="line">var Car = function() &#123;</span><br><span class="line">  this.brand = &apos;volvo&apos;;</span><br><span class="line">  this.color = &apos;red&apos;;</span><br><span class="line">  this.funcX = function() &#123;</span><br><span class="line">    this.funcY();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  this.funcY = function() &#123;</span><br><span class="line">    this.funcZ();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  this.funcZ = function() &#123;</span><br><span class="line">    console.trace(&apos;trace car&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">func1();</span><br></pre></td></tr></table></figure></p>
+<h3 id="将-minify-的代码还原"><a href="#将-minify-的代码还原" class="headerlink" title="将 minify 的代码还原"></a>将 minify 的代码还原</h3><p>谷歌浏览器可以将 JavaScript 代码还原到一个可读的样式，点击{}来结构化代码：<br><img src="https://ws1.sinaimg.cn/large/bbc18a06gy1g2f0dj56f5j20xm0wadkf.jpg" alt=""></p>
+<h3 id="使用source-map"><a href="#使用source-map" class="headerlink" title="使用source map"></a>使用source map</h3><p>代码压缩的时候生成source map，可以方便查看代码压缩前的位置</p>
+<h3 id="本地开发移动端调试"><a href="#本地开发移动端调试" class="headerlink" title="本地开发移动端调试"></a>本地开发移动端调试</h3><ul>
+<li>微信端可以使用vConsole调试 <a href="https://github.com/Tencent/vConsole" target="_blank" rel="noopener">https://github.com/Tencent/vConsole</a></li>
+<li>webpack 配置IP和端口号调式<br>webpack搭建本地服务器的时候可以修改配置来连接手机调式</li>
 </ul>
-<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>Git- <a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a><br>TortoiseGit - <a href="https://tortoisegit.org/" target="_blank" rel="noopener">TortoiseGit</a><br>SourceTree - <a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener">SourceTree</a><br>编辑器的Git管理插件也很好用</p>
-<h3 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><p><a href="https://api.boqiicdn.com/o_1b708b67fqto1dvg39g1v9q1t7p15.jpg?imageView2/2/w/750/h/532/interlace/1/q/75" target="_blank" rel="noopener">gitbook</a><br><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">常用 Git 命令清单</a><br><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git教程</a></p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">devServer: &#123;</span><br><span class="line">  host: &apos;192.168.0.1&apos;, // 自己电脑IP</span><br><span class="line">  inline: true,</span><br><span class="line">  port: 8090,</span><br><span class="line">  colors: true</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+<p>或者package.json中修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">   &quot;dev&quot;: &quot;webpack-dev-server --inline --progress --host 192.168.0.1 --host 8090 --config build/webpack.dev.conf.js&quot;,</span><br><span class="line">   &quot;start&quot;: &quot;npm run dev&quot;,</span><br><span class="line">   &quot;build&quot;: &quot;node build/build.js&quot;</span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
+<p>如果手机不可以访问，可以试试把IP改成 0.0.0.0 (0.0.0.0是广播地址)</p>
+<h3 id="Fundebug"><a href="#Fundebug" class="headerlink" title="Fundebug"></a>Fundebug</h3><p>Fundebug可以帮助我们在js运行、资源加载、http请求错误实时邮件报警<br>Fundebug可以错误源码调用栈定位，记录用户行为记录，细化适用前端各种框架，业务主流程监控上报自定义扩展</p>
+<h3 id="Postman"><a href="#Postman" class="headerlink" title="Postman"></a>Postman</h3><p>Postman可以用来发送Ajax请求，很方便的编辑请求的header、请求参数等，而且这些请求可以保存起来，下次重发<br>我是看到很多后端开发伙伴都用的Postman，作为前端我们也要用起来</p>
 
       
 
@@ -203,7 +200,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
         		</li>
       		
 		</ul>
@@ -222,18 +219,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/13/一首孙燕姿/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          一首孙燕姿
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/13/vue使用的一些总结/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue使用的一些总结1</div>
+    <a href="/2019/04/16/反思/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">反思</div>
       <i class="icon-circle-right"></i>
     </a>
   
