@@ -6,17 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/1 | xiaoxia的博客</title>
+  <title>学习点NodeJS(1) | xiaoxia的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生活是自己的">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xiaoxia的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/01/index.html">
+  <meta name="description" content="前端开发总是要会一点NodeJS，现在开启学习之路">
+<meta name="keywords" content="前端开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习点NodeJS(1)">
+<meta property="og:url" content="http://yoursite.com/2019/04/28/学习点NodeJS(1)/index.html">
 <meta property="og:site_name" content="xiaoxia的博客">
-<meta property="og:description" content="生活是自己的">
+<meta property="og:description" content="前端开发总是要会一点NodeJS，现在开启学习之路">
+<meta property="og:updated_time" content="2019-04-28T09:04:09.603Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xiaoxia的博客">
-<meta name="twitter:description" content="生活是自己的">
+<meta name="twitter:title" content="学习点NodeJS(1)">
+<meta name="twitter:description" content="前端开发总是要会一点NodeJS，现在开启学习之路">
   
     <link rel="alternative" href="/atom.xml" title="xiaoxia的博客" type="application/atom+xml">
   
@@ -144,36 +146,51 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-学习点NodeJS(1)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学习点NodeJS(1)
+    </h1>
+  
+
+        
+        <a href="/2019/04/28/学习点NodeJS(1)/" class="archive-article-date">
+  	<time datetime="2019-04-28T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-28</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前端开发总是要会一点NodeJS，现在开启学习之路</p>
+<a id="more"></a>
+<h3 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h3><p>NodeJS是一个JS脚本解析器，可以实现高性能Web服务器。在配置好了系统PATH环境变量后我们就可以在终端下可以使用node命令。</p>
+<h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><p>NodeJS使用的是CMD模块系统，所有模块在执行过程中只初始化一次。</p>
+<ul>
+<li>require<br>require函数用于在当前模块中加载和使用别的模块，传入一个模块名，返回一个模块导出对象。<figure class="highlight plain"><figcaption><span>data </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ exports</span><br><span class="line">exports对象是当前模块的导出对象，用于导出模块公有方法和属性。别的模块通过require函数使用当前模块时得到的就是当前模块的exports对象。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>exports.hello = function () {<br>    console.log(‘Hello World!’);<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ module</span><br><span class="line">通过module对象可以访问到当前模块的一些相关信息，但最多的用途是替换当前模块的导出对象。</span><br></pre></td></tr></table></figure></p>
+<p>module.exports = function () {<br>    console.log(‘Hello World!’);<br>};<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">### 全局变量</span><br><span class="line"></span><br><span class="line">+ __dirname</span><br><span class="line">用来获取当前模块文件所在目录的完整绝对路径</span><br><span class="line">+ _filename</span><br><span class="line">用来获取当前模块文件的脚本文件名</span><br><span class="line"></span><br><span class="line">### 全局对象</span><br><span class="line">+ global</span><br><span class="line">global表示Node所在的全局环境，类似于浏览器中的window对象</span><br><span class="line">+ process</span><br><span class="line">指向Node内置的process模块，允许开发者与当前进程互动。</span><br><span class="line"></span><br><span class="line">```process.env```，process.env 属性返回包含用户环境的对象</span><br><span class="line">在webpack中我们经常设置一个环境变量用来区分正式环境和测试环境</span><br></pre></td></tr></table></figure></p>
+<p>const HOST = process.env.HOST<br>const PORT = process.env.PORT &amp;&amp; Number(process.env.PORT)<br>process.env.NODE_ENV = ‘production’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```process.exit([code])```，process.exit()方法终止进程，code默认值是0，调用 process.exit() 将强制进程尽快退出</span><br><span class="line">+ console</span><br><span class="line">指向Node内置的console模块</span><br><span class="line"></span><br><span class="line">### path模块</span><br><span class="line">path模块是nodeJs内置的模块，用于处理文件路径和目录路径的实用工具，path模块很常用</span><br><span class="line"></span><br><span class="line">+ 获取文件名</span><br><span class="line">```path.basename(path[, ext])```，返回path的最后一部分，用来获取文件名</span><br></pre></td></tr></table></figure></p>
+<p>path.basename(‘/node-test/index.html’); // 返回: ‘index.html’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ 获取路径</span><br><span class="line">```path.dirname(path)```，返回 path 的目录名，获取路径，在webpack配置中，我们经常见到使用这个方法</span><br></pre></td></tr></table></figure></p>
+<p>path.dirname(‘/node-test/index.html’); // 返回: ‘/node-test’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ 获取路径</span><br><span class="line">```path.resolve([...paths])```, 将路径或路径片段的序列解析为绝对路径，层级关系是从左到右的</span><br></pre></td></tr></table></figure>
+<p>path.resolve(‘/foo/bar’, ‘./baz’);<br>// 返回: ‘/foo/bar/baz’<br>path.resolve(‘wwwroot’, ‘static_files/png/‘, ‘../gif/image.gif’);<br>// 如果当前工作目录是 /home/myself/node，<br>// 则返回 ‘/home/myself/node/wwwroot/static_files/gif/image.gif’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ 获取路径</span><br><span class="line">path.join()方法使用平台特定的分隔符把全部给定的path片段连接到一起，并规范化生成的路径。 长度为零的 path 片段会被忽略。 如果连接后的路径字符串是一个长度为零的字符串，则返回 &apos;.&apos;，表示当前工作目录。</span><br></pre></td></tr></table></figure></p>
+<p>path.join(‘/foo’, ‘baz’, ‘bar’);<br>// 返回 ‘/foo/baz/bar’<br>path.join(‘/foo’, ‘bar’, ‘baz/asdf’, ‘quux’, ‘..’);<br>// 返回 ‘/foo/bar/baz/asdf’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">+ 获取扩展名</span><br><span class="line">```path.extname(path)```，path.extname() 方法返回path的扩展名，从最后一次出现 .（句点）字符到 path 最后一部分的字符串结束。</span><br></pre></td></tr></table></figure></p>
+<p>path.extname(‘index.html’);<br>// 返回: ‘.html’<br>path.extname(‘index.coffee.md’);<br>// 返回: ‘.md’<br>```</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/18/DOM原生操作/" class="archive-article-date">
-  	<time datetime="2019-01-18T02:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/18/DOM原生操作/">DOM原生操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -185,133 +202,55 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/02/async、await和promise的一些理解/" class="archive-article-date">
-  	<time datetime="2019-01-02T07:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-02</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/28/学习点MongoDB(1)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">学习点MongoDB(1)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/02/async、await和promise的一些理解/">async、await和promise的一些理解</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/01/前端JS基础篇/" class="archive-article-date">
-  	<time datetime="2019-01-01T07:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/01/前端JS基础篇/">前端JS基础篇</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/01/移动端开发遇到的一些问题总结/" class="archive-article-date">
-  	<time datetime="2019-01-01T07:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/01/移动端开发遇到的一些问题总结/">移动端开发遇到的一些问题总结</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -334,8 +273,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

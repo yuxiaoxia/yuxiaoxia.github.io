@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/1 | xiaoxia的博客</title>
+  <title>学习点MongoDB(1) | xiaoxia的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="生活是自己的">
-<meta property="og:type" content="website">
-<meta property="og:title" content="xiaoxia的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/01/index.html">
+  <meta name="description" content="前端开发总是要会一点MongoDB，现在开启学习之路">
+<meta name="keywords" content="前端开发">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习点MongoDB(1)">
+<meta property="og:url" content="http://yoursite.com/2019/04/28/学习点MongoDB(1)/index.html">
 <meta property="og:site_name" content="xiaoxia的博客">
-<meta property="og:description" content="生活是自己的">
+<meta property="og:description" content="前端开发总是要会一点MongoDB，现在开启学习之路">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/bbc18a06gy1g2igkh729yj219y0h6mzh.jpg">
+<meta property="og:image" content="https://ws1.sinaimg.cn/large/bbc18a06gy1g2igkygzznj20zm0fydhv.jpg">
+<meta property="og:updated_time" content="2019-04-28T09:08:43.263Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="xiaoxia的博客">
-<meta name="twitter:description" content="生活是自己的">
+<meta name="twitter:title" content="学习点MongoDB(1)">
+<meta name="twitter:description" content="前端开发总是要会一点MongoDB，现在开启学习之路">
+<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/bbc18a06gy1g2igkh729yj219y0h6mzh.jpg">
   
     <link rel="alternative" href="/atom.xml" title="xiaoxia的博客" type="application/atom+xml">
   
@@ -144,36 +149,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-学习点MongoDB(1)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学习点MongoDB(1)
+    </h1>
+  
+
+        
+        <a href="/2019/04/28/学习点MongoDB(1)/" class="archive-article-date">
+  	<time datetime="2019-04-28T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-28</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>前端开发总是要会一点MongoDB，现在开启学习之路</p>
+<a id="more"></a>
+<h3 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h3><p>MongoDB是由C++语言编写的，是一个基于分布式文件存储的开源数据库系统。MongoDB 旨在为WEB应用提供可扩展的高性能数据存储解决方案。MongoDB 将数据存储为一个文档，数据结构由键值(key=&gt;value)对组成。</p>
+<p>主要特点：<br>MongoDB 是一个面向文档存储的数据库，安装操作起来比较简单和容易<br>如果负载的增加（需要更多的存储空间和更强的处理能力） ，它可以分布在计算机网络中的其他节点上这就是所谓的分片。</p>
+<p>MongoDB中基本的概念是文档、集合、数据库<br><img src="https://ws1.sinaimg.cn/large/bbc18a06gy1g2igkh729yj219y0h6mzh.jpg" alt=""></p>
+<h3 id="mongoose"><a href="#mongoose" class="headerlink" title="mongoose"></a>mongoose</h3><p>mongoose是nodeJS提供连接MongoDB的一个库</p>
+<ul>
+<li>安装<br>安装mongoose我们只需要npm install就可以了<figure class="highlight plain"><figcaption><span>install mongoose --save```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ 连接</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>‘use strict’;<br>const mongoose = require(‘mongoose’);<br>mongoose.connect(‘mongodb://localhost:27017/test’);<br>const con = mongoose.connection;<br>con.on(‘error’, console.error.bind(console, ‘连接数据库失败’));<br>con.once(‘open’,()=&gt;{<br>    //成功连接<br>})</p>
+<p>```</p>
+<ul>
+<li>mongoose的一些概念<br><img src="https://ws1.sinaimg.cn/large/bbc18a06gy1g2igkygzznj20zm0fydhv.jpg" alt=""></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/18/DOM原生操作/" class="archive-article-date">
-  	<time datetime="2019-01-18T02:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/18/DOM原生操作/">DOM原生操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -185,133 +203,64 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/02/async、await和promise的一些理解/" class="archive-article-date">
-  	<time datetime="2019-01-02T07:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-02</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/04/28/学习点NodeJS(1)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          学习点NodeJS(1)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/25/JavaScript的一些调试技巧/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript的一些调试技巧</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/02/async、await和promise的一些理解/">async、await和promise的一些理解</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/01/前端JS基础篇/" class="archive-article-date">
-  	<time datetime="2019-01-01T07:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/01/前端JS基础篇/">前端JS基础篇</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/01/移动端开发遇到的一些问题总结/" class="archive-article-date">
-  	<time datetime="2019-01-01T07:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/01/移动端开发遇到的一些问题总结/">移动端开发遇到的一些问题总结</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -334,8 +283,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
