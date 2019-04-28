@@ -319,16 +319,6 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="debugger"><a href="#debugger" class="headerlink" title="debugger;"></a>debugger;</h3><p>在js代码中，加入<code>debugger;</code>为我们的代码设置断点进行调试</p>
-<h3 id="将对象以表格的形式展示"><a href="#将对象以表格的形式展示" class="headerlink" title="将对象以表格的形式展示"></a>将对象以表格的形式展示</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var obj = [</span><br><span class="line">    &#123; name: &quot;name1&quot;, title: &apos;111&apos; &#125;,</span><br><span class="line">    &#123; name: &quot;name2&quot;, title: &apos;111&apos; &#125;,</span><br><span class="line">    &#123; name: &quot;name3&quot;, title: &apos;111&apos; &#125;,</span><br><span class="line">];</span><br><span class="line">console.table(obj);</span><br></pre></td></tr></table></figure>
-<p><img src="https://ws1.sinaimg.cn/large/bbc18a06gy1g2f01k175dj21bm050aad.jpg" alt=""></p>
-<h3 id="使用-console-time-和-console-timeEnd-来记录时间"><a href="#使用-console-time-和-console-timeEnd-来记录时间" class="headerlink" title="使用 console.time()和 console.timeEnd()来记录时间"></a>使用 console.time()和 console.timeEnd()来记录时间</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.time(&quot;time&quot;);</span><br><span class="line">var items = [];</span><br><span class="line">for (var i = 0; i &lt; 100000; i++) &#123;</span><br><span class="line">    items.push(&#123; index: i &#125;);</span><br><span class="line">&#125;</span><br><span class="line">console.timeEnd(&quot;time&quot;); // time: 29.7890625ms</span><br></pre></td></tr></table></figure>
-<h3 id="获取某个函数的-Stacktrace"><a href="#获取某个函数的-Stacktrace" class="headerlink" title="获取某个函数的 Stacktrace"></a>获取某个函数的 Stacktrace</h3><p>使用console.trace依然可以快速定位函数，在一些复杂的代码里，可以查看函数调用情况<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">var car;</span><br><span class="line">var func1 = function() &#123;</span><br><span class="line">  func2();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var func2 = function() &#123;</span><br><span class="line">  func4();</span><br><span class="line">&#125;</span><br><span class="line">var func3 = function() &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var func4 = function() &#123;</span><br><span class="line">  car = new Car();</span><br><span class="line">  car.funcX();</span><br><span class="line">&#125;</span><br><span class="line">var Car = function() &#123;</span><br><span class="line">  this.brand = &apos;volvo&apos;;</span><br><span class="line">  this.color = &apos;red&apos;;</span><br><span class="line">  this.funcX = function() &#123;</span><br><span class="line">    this.funcY();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  this.funcY = function() &#123;</span><br><span class="line">    this.funcZ();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  this.funcZ = function() &#123;</span><br><span class="line">    console.trace(&apos;trace car&apos;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">func1();</span><br></pre></td></tr></table></figure></p>
-<h3 id="将-minify-的代码还原"><a href="#将-minify-的代码还原" class="headerlink" title="将 minify 的代码还原"></a>将 minify 的代码还原</h3><p>谷歌浏览器可以将 JavaScript 代码还原到一个可读的样式，点击{}来结构化代码：<br><img src="https://ws1.sinaimg.cn/large/bbc18a06gy1g2f0dj56f5j20xm0wadkf.jpg" alt=""></p>
-<h3 id="使用source-map"><a href="#使用source-map" class="headerlink" title="使用source map"></a>使用source map</h3><p>代码压缩的时候生成source map，可以方便查看代码压缩前的位置</p>
-<h3 id="本地开发移动端调试"><a href="#本地开发移动端调试" class="headerlink" title="本地开发移动端调试"></a>本地开发移动端调试</h3><ul>
-<li>微信端可以使用vConsole调试 <a href="https://github.com/Tencent/vConsole" target="_blank" rel="noopener">https://github.com/Tencent/vConsole</a></li>
-<li>webpack 配置IP和端口号调式<br>webpack搭建本地服务器的时候可以修改配置来连接手机调式</li>
-</ul>
         
           <a class="article-more-a" href="/2019/04/25/JavaScript的一些调试技巧/#more">more >></a>
         
@@ -620,84 +610,6 @@
 
 
   
-    <article id="post-前端JS基础篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/01/前端JS基础篇/">前端JS基础篇</a>
-    </h1>
-  
-
-        
-        <a href="/2019/01/01/前端JS基础篇/" class="archive-article-date">
-  	<time datetime="2019-01-01T07:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>个人整理的js的一些基本知识</p>
-<h3 id="内置类型"><a href="#内置类型" class="headerlink" title="内置类型"></a>内置类型</h3><p>js的基础类型分为两大类：基本类型和引用类型</p>
-<p>基本类型有六种： null，undefined，boolean，number，string，symbol<br>引用类型：object<br>其中Array，Function，Regexp都是对象，都属于引用类型</p>
-        
-          <a class="article-more-a" href="/2019/01/01/前端JS基础篇/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/01/01/前端JS基础篇/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-移动端开发遇到的一些问题总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -748,6 +660,84 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/01/01/移动端开发遇到的一些问题总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-前端JS基础篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/01/前端JS基础篇/">前端JS基础篇</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/01/前端JS基础篇/" class="archive-article-date">
+  	<time datetime="2019-01-01T07:51:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>个人整理的js的一些基本知识</p>
+<h3 id="内置类型"><a href="#内置类型" class="headerlink" title="内置类型"></a>内置类型</h3><p>js的基础类型分为两大类：基本类型和引用类型</p>
+<p>基本类型有六种： null，undefined，boolean，number，string，symbol<br>引用类型：object<br>其中Array，Function，Regexp都是对象，都属于引用类型</p>
+        
+          <a class="article-more-a" href="/2019/01/01/前端JS基础篇/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/01/前端JS基础篇/">展开全文 >></a>
         </p>
       
 
@@ -1021,19 +1011,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">资源集合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">杂谈</a>
+                <a href="javascript:void(0)" class="js-tag color5">资源集合</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1041,7 +1023,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">杂谈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
             
             <div class="clearfix"></div>
