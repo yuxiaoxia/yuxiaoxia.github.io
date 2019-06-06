@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2019/04/16/webpack的一些总结/index.html">
 <meta property="og:site_name" content="xiaoxia的博客">
 <meta property="og:description" content="webpack想必都不陌生了，但是配置文件缺却很少有很认真的研究总结过，经过近段时间学习，下面是我的一些总结">
-<meta property="og:updated_time" content="2019-05-05T14:54:37.257Z">
+<meta property="og:updated_time" content="2019-05-06T01:39:23.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="webpack的一些总结">
 <meta name="twitter:description" content="webpack想必都不陌生了，但是配置文件缺却很少有很认真的研究总结过，经过近段时间学习，下面是我的一些总结">
@@ -216,7 +216,7 @@
 </li>
 </ul>
 <p>process指向Node内置的process模块，允许开发者与当前进程互动。</p>
-<figure class="highlight plain"><figcaption><span>属性返回包含用户环境的对象</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在webpack中我们经常设置一个环境变量用来区分正式环境和测试环境</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">在webpack中我们经常设置一个环境变量用来区分正式环境和测试环境</span><br></pre></td></tr></table></figure>
 <p>const HOST = process.env.HOST<br>const PORT = process.env.PORT &amp;&amp; Number(process.env.PORT)<br>process.env.NODE_ENV = ‘production’<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### webpack优化</span><br><span class="line"></span><br><span class="line">随着项目模块的增加，webpack打包编译的速度可能会变得很慢，打包的文件可能太大了，所以需要进行一些优化</span><br><span class="line"></span><br><span class="line">+ CommonsChunkPlugin</span><br><span class="line"></span><br><span class="line">CommonsChunkPlugin插件可以用来提取多个入口chunk的第三方库和公共模块，最终打包生成的文件，这些第三方库和公共模块我们只需要引入一次即可。</span><br><span class="line"></span><br><span class="line">CommonsChunkPlugin抽取的是第三方库、自定义公共模块、webpack运行文件，可以通过分离这些文件，减少vendor文件的大小。</span><br></pre></td></tr></table></figure></p>
 <p>// 抽出第三方库<br>new webpack.optimize.CommonsChunkPlugin({<br>  name: ‘vendor’,<br>  minChunks (module) {<br>    return (<br>      module.resource &amp;&amp;<br>      /.js$/.test(module.resource) &amp;&amp;<br>      module.resource.indexOf(<br>        path.join(__dirname, ‘../node_modules’)<br>      ) === 0<br>    )<br>  }<br>}),<br>// 抽出 webpack runtime代码 和 module manifest<br>new webpack.optimize.CommonsChunkPlugin({<br>  name: ‘manifest’,<br>  minChunks: Infinity<br>}),<br>// 异步<br>new webpack.optimize.CommonsChunkPlugin({<br>  name: ‘app’,<br>  async: ‘vendor-async’,<br>  children: true,<br>  minChunks: 3<br>}),<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">minChunks可以设置为数字、函数和Infinity，默认值是2</span><br><span class="line"></span><br><span class="line">数字：模块被多少个chunk公共引用才被抽取出来成为commons chunk</span><br><span class="line"></span><br><span class="line">函数：接受 (module, count) 两个参数，返回一个布尔值，你可以在函数内进行你规定好的逻辑来决定某个模块是否提取成为commons chunk</span><br><span class="line"></span><br><span class="line">Infinity：只有当入口文件（entry chunks） &gt;= 3 才生效，用来在第三方库中分离自定义的公共模块</span><br><span class="line"></span><br><span class="line">+ externals</span><br><span class="line"></span><br><span class="line">使用externals将不怎么需要更新的第三方库脱离webpack打包</span><br><span class="line"></span><br><span class="line">例如jQuery，不常变动的，单独取出，通过使用script标签形式cdn引入</span><br></pre></td></tr></table></figure></p>
 <p>module.exports = {<br>     output: {<br>           libraryTarget: “umd”<br>     },<br>     externals: {<br>           jquery: “jQuery”<br>    },<br>    …<br>}<br>```</p>
@@ -410,7 +410,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -418,7 +418,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">前端开发</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
